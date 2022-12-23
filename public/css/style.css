@@ -25,7 +25,8 @@ header {
 }
 
 header img{
-    height: 6rem;
+    height: 7rem;
+    padding-top: 0.5rem
 }
 
 header p{
