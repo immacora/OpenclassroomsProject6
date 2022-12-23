@@ -18,7 +18,7 @@ Le site fonctionne de façon similaire sur les navigateurs Google Chrome, Safari
 
 ## Contenu
     - Un répertoire js
-    - Un répertoire public
+    - Un répertoire public contenant les répertoires css et img
     - Un fichier index.html
 
 ## Utilisation
