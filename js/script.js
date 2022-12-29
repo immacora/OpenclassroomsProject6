@@ -1,107 +1,112 @@
-/* CONSTANTES */
-
-// URL
-const ocMoviesURL = "http://localhost:8000/api/v1/titles";
-const bestMoviesFilter = "?sort_by=-imdb_score";
-const categoryFantasy = "&genre=fantasy";
-const categoryDocumentary = "&genre=documentary";
-const categoryThriller = "&genre=thriller";
-
-// Eléments du DOM
-const hero = document.getElementById('hero');
-const bestMovies = document.getElementById('bestMovies');
-
-
-/* CLASSE FILM */
-class Movie {
-    constructor(id, title, date_published, duration, long_description, avg_vote, imdb_score, image_url, actors, directors, genres, countries, rated, jsiRank) {
-    
-        this.id = id;   
-        this.title = title; 
-        this.date_published = date_published;
-        this.duration = duration;
-        this.long_description = long_description;
-        this.avg_vote = avg_vote;
-        this.imdb_score = imdb_score;
-        this.image_url = image_url; 
-        this.actors = actors;
-        this.directors = directors;
-        this.genres = genres; 
-        this.countries = countries;
-        this.rated = rated;
-        this.jsiRank = jsiRank;
-    }
-}
-
 /* FONCTIONS */
 
 /**
- * Requête fetch asynchone retournant la liste des premiers ids (1 à 10 maximum) des films les mieux notés par classement descendant.
+ * Requête fetch asynchone récupérant la liste des premiers Ids des films (1 à 10 maximum) les mieux notés d'une catégorie par classement descendant.
  * @param { String } url
- * @param { List } moviesIds
- * @return { Promise }
+ * @return { Promise } moviesIds
  */
-
-async function getMoviesIds(url, moviesIds=[]) {
-
+async function getCategoryMoviesIds(url, moviesIds=[]) {
+    // Récupère la liste des films de la catégorie et sa pagination
     try {
-        let response = await fetch(url)
-
+        let response = await fetch(url);
         if (response.ok) {
-            let data = await response.json()
+            let data = await response.json();
             let previous = data.previous;
             let next = data.next;
             let results = data.results;
-
-            for (let result of results) {
-                moviesIds.push(result.id);
-            }
-
-            // Retourne la liste s'il existe une seule page
-            if ((previous === null) & (next === null)) {
+            // Récupère l'id de chaque film de la catégorie et les ajoute à la liste
+            results.forEach(result => {
+                let movieId = result.id;
+                moviesIds.push(movieId);
+            });
+            // Rappelle la fonction s'il existe une seconde page et retourne la liste
+            if ((previous === null) & (next != null)) {
+                getCategoryMoviesIds(next, moviesIds);
+                return moviesIds;
+            } else {
                 return moviesIds;
             }
-            // Retourne la liste des ids des 2 pages s'il en existe une seconde
-            else if ((previous === null) & (next != null)) {
-                getMoviesIds(next, moviesIds);
-                return moviesIds;
-            }
-
         } else {
-            alert("La requête a échoué"  + error)
+            alert("Erreur de connexion aux catégories" + error);
         }
     } catch (error) {
-      alert("Erreur de connexion à l'API OCMovies" + error)
+        alert("Erreur de connexion à l'API OCMovies" + error);
     }
 }
-  
+
+
 /**
- * Requête fetch asynchone retournant les objets films de la liste d'ids.
- * @param { List } moviesIds
- * @return { Promise }
+ * Requête fetch asynchone récupérant et affichant les informations du film cherché par id.
+ * @param { String } movieId
  */
-
-async function getMoviesInfos(moviesIds) {
-
+async function getMovieInfos(movieId) {
     try {
-        let response = await fetch(url)
+        let response = await fetch(ocMoviesURL + movieId);
+        let movieInfos = await response.json();
 
-        if (response.ok) {
-            //code
+        let movieImageURL = await movieInfos.image_url;
+        let img = document.createElement('img');
+        document.querySelector('figure > .img').append(img);
+        img.src = movieImageURL;
 
-        } else {
-            alert("La requête a échoué"  + error)
-        }
+        let movieTitle = await movieInfos.title;
+        document.querySelector('figcaption > h2').innerHTML = movieTitle;
+
+        let imgModal = document.createElement('img');
+        document.querySelector('.img_modal').append(imgModal);
+        imgModal.src = movieImageURL;
+
+        let movieDatePublished = await movieInfos.date_published;
+        document.querySelector('.date').innerHTML = movieDatePublished;
+
+        let movieDuration = await movieInfos.duration;
+        document.querySelector('.duration').innerHTML = movieDuration + ' Min';
+
+        let movieActors = await movieInfos.actors;
+        let movieActorsList = document.querySelector('.actors > ul');
+        movieActors.forEach(movieActor => {
+            let li = document.createElement('li');
+            li.innerHTML = movieActor;
+            movieActorsList.appendChild(li);
+        });
+
+        let movieDirectors = await movieInfos.directors;
+        document.querySelector('.directors').innerHTML = movieDirectors;
+
+        let movieCountries = await movieInfos.countries;
+        document.querySelector('.countries').innerHTML = movieCountries;
+
+        let movieGenres = await movieInfos.genres;
+        document.querySelector('.genres').innerHTML = movieGenres;
+
+        let movieAvgVote = await movieInfos.avg_vote;
+        document.querySelector('.avg_vote').innerHTML = movieAvgVote;
+
+        let movieImdbScore = await movieInfos.imdb_score;
+        document.querySelector('.imdb_score').innerHTML = movieImdbScore;
+
+        let movieRated = await movieInfos.rated;
+        document.querySelector('.rated').innerHTML = movieRated;
+
+        let movieLong_description = await movieInfos.long_description;
+        document.querySelector('.long_description').innerHTML = movieLong_description;
+
     } catch (error) {
-      alert("Erreur de connexion à l'API OCMovies" + error)
+        alert("Erreur de connexion à la page du film" + error);
     }
 }
 
 
 /* MAIN */
 
-let moviesIdsDocumentary = getMoviesIds(ocMoviesURL + bestMoviesFilter + categoryDocumentary);
-console.log('resultMoviesId category Documentary:', moviesIdsDocumentary);
+// VARIABLES GLOBALES
 
-let bestsMoviesIds = getMoviesIds(ocMoviesURL + bestMoviesFilter);
-console.log('resultMoviesId category All bests movies: ', bestsMoviesIds);
+let bestMoviesIds = getCategoryMoviesIds(ocMoviesURL + bestMoviesFilter);
+console.log('bestMoviesIds', bestMoviesIds);
+
+let bestMoviesDocumentaryIds = getCategoryMoviesIds(ocMoviesURL + bestMoviesFilter + categoryDocumentary);
+console.log('bestMoviesDocumentary', bestMoviesDocumentaryIds);
+
+let movieInfos = getMovieInfos(1508669);
+
+
