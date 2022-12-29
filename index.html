@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="public/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
     <script src="js/script.js" async></script>
+    <script src="js/main.js" async></script>
 </head>
 
 <body>
@@ -27,9 +28,61 @@
     <section id="hero">
         <p>Photo du meilleur film (qui a la meilleure note Imdb toutes catégories confondues)</p>
         <h2>Titre du film</h2>
-        <button>bouton play</button>
+        <button>More info</button>
         <p>résumé du film</p>
     </section>
+
+    <p>--------Début de modale------</p>
+
+    <figure class="movie">
+        <p class="img"></p>
+        <figcaption class="movie_modal">
+            <h2></h2>
+            <p class="img_modal"></p>
+            <div class="infos">
+                <table>
+                    <tr>
+                        <td>Sortie : </td>
+                        <td class="date"></td>
+                    </tr>
+                    <tr>
+                        <td>Durée : </td>
+                        <td class="duration"></td>
+                    </tr>
+                    <tr>
+                        <td>Acteurs : </td>
+                        <td class="actors"><ul></ul></td>
+                    </tr>
+                    <tr>
+                        <td>Réalisateur : </td>
+                        <td class="directors"></td>
+                    </tr>
+                    <tr>
+                        <td>Pays : </td>
+                        <td class="countries"></td>
+                    </tr>
+                    <tr>
+                        <td>Genres : </td>
+                        <td class="genres"></td>
+                    </tr>
+                    <tr>
+                        <td>Résultat au Box Office : </td>
+                        <td class="avg_vote"></td>
+                    </tr>
+                    <tr>
+                        <td>Score Imdb : </td>
+                        <td class="imdb_score"></td>
+                    </tr>
+                    <tr>
+                        <td>Classement : </td>
+                        <td class="rated"></td>
+                    </tr>
+                </table>
+                <p class="long_description"></p>
+            </div>
+        </figcaption>
+    </figure>
+
 
     <section id="categories">
         <div id="bestMovies">
@@ -52,6 +105,7 @@
 
     <footer>
         <p>© 2022 - JustStreamIt</p>
+        
     </footer>
 </body>
 </html>
