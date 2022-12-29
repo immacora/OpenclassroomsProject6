@@ -8,8 +8,8 @@
     <link rel="icon" type="image/x-icon" href="public/img/favicon_jsi.png">
     <link rel="stylesheet" href="public/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <script src="js/const.js" async></script>
     <script src="js/script.js" async></script>
-    <script src="js/main.js" async></script>
 </head>
 
 <body>
@@ -34,11 +34,14 @@
 
     <p>--------Début de modale------</p>
 
-    <figure class="movie">
+    <figure>
         <p class="img"></p>
-        <figcaption class="movie_modal">
+        <figcaption>
             <h2></h2>
-            <p class="img_modal"></p>
+            <div class="movie">
+                <p class="img_modal"></p>
+                <p class="long_description"></p>
+            </div>
             <div class="infos">
                 <table>
                     <tr>
@@ -78,7 +81,6 @@
                         <td class="rated"></td>
                     </tr>
                 </table>
-                <p class="long_description"></p>
             </div>
         </figcaption>
     </figure>
@@ -105,7 +107,6 @@
 
     <footer>
         <p>© 2022 - JustStreamIt</p>
-        
     </footer>
 </body>
 </html>
