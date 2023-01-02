@@ -1,5 +1,24 @@
 /* FONCTIONS */
 
+
+/**
+ * L'événement onclick sur la classe header__burger du DOM déclenche la fonction openMobileMenu.
+ * Ajoute la classe "open" au memu (classe header__nav).
+ */
+function openMobileMenu() {
+    document.querySelector('.header__nav').classList.add('open');
+}
+
+
+/**
+ * L'événement onclick sur la classe header__burger__close du DOM déclenche la fonction closeMobileMenu.
+ * Enlève la classe "open" du memu (classe header__nav).
+ */
+function closeMobileMenu() {
+    document.querySelector('.header__nav').classList.remove('open');
+}
+
+
 /**
  * Requête fetch asynchone récupérant la liste des premiers Ids des films (1 à 10 maximum) les mieux notés d'une catégorie par classement descendant.
  * @param { String } url
@@ -27,7 +46,7 @@ async function getCategoryMoviesIds(url, moviesIds=[]) {
                 return moviesIds;
             }
         } else {
-            alert("Erreur de connexion aux catégories" + error);
+            alert("Catégorie non trouvée" + error);
         }
     } catch (error) {
         alert("Erreur de connexion à l'API OCMovies" + error);
@@ -56,11 +75,14 @@ async function getMovieInfos(movieId) {
         document.querySelector('.img_modal').append(imgModal);
         imgModal.src = movieImageURL;
 
+        let movieLong_description = await movieInfos.long_description;
+        document.querySelector('.long_description').innerHTML = movieLong_description;
+
         let movieDatePublished = await movieInfos.date_published;
-        document.querySelector('.date').innerHTML = movieDatePublished;
+        document.querySelector('.date_info').innerHTML = movieDatePublished;
 
         let movieDuration = await movieInfos.duration;
-        document.querySelector('.duration').innerHTML = movieDuration + ' Min';
+        document.querySelector('.duration_info').innerHTML = movieDuration + ' Min';
 
         let movieActors = await movieInfos.actors;
         let movieActorsList = document.querySelector('.actors > ul');
@@ -71,35 +93,34 @@ async function getMovieInfos(movieId) {
         });
 
         let movieDirectors = await movieInfos.directors;
-        document.querySelector('.directors').innerHTML = movieDirectors;
+        document.querySelector('.directors_info').innerHTML = movieDirectors;
 
         let movieCountries = await movieInfos.countries;
-        document.querySelector('.countries').innerHTML = movieCountries;
+        document.querySelector('.countries_info').innerHTML = movieCountries;
 
         let movieGenres = await movieInfos.genres;
-        document.querySelector('.genres').innerHTML = movieGenres;
+        let movieGenresList = document.querySelector('.genres > ul');
+        movieGenres.forEach(movieGenre => {
+            let li = document.createElement('li');
+            li.innerHTML = movieGenre;
+            movieGenresList.appendChild(li);
+        });
 
         let movieAvgVote = await movieInfos.avg_vote;
-        document.querySelector('.avg_vote').innerHTML = movieAvgVote;
+        document.querySelector('.avg_vote_info').innerHTML = movieAvgVote;
 
         let movieImdbScore = await movieInfos.imdb_score;
-        document.querySelector('.imdb_score').innerHTML = movieImdbScore;
+        document.querySelector('.imdb_score_info').innerHTML = movieImdbScore;
 
         let movieRated = await movieInfos.rated;
-        document.querySelector('.rated').innerHTML = movieRated;
-
-        let movieLong_description = await movieInfos.long_description;
-        document.querySelector('.long_description').innerHTML = movieLong_description;
-
+        document.querySelector('.rated_info').innerHTML = movieRated;
     } catch (error) {
-        alert("Erreur de connexion à la page du film" + error);
+        alert("Film non trouvé" + error);
     }
 }
 
 
 /* MAIN */
-
-// VARIABLES GLOBALES
 
 let bestMoviesIds = getCategoryMoviesIds(ocMoviesURL + bestMoviesFilter);
 console.log('bestMoviesIds', bestMoviesIds);
@@ -108,5 +129,3 @@ let bestMoviesDocumentaryIds = getCategoryMoviesIds(ocMoviesURL + bestMoviesFilt
 console.log('bestMoviesDocumentary', bestMoviesDocumentaryIds);
 
 let movieInfos = getMovieInfos(1508669);
-
-

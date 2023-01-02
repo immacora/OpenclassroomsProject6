@@ -73,6 +73,29 @@ header {
     height: 3rem;
 }
 
+ /*HERO*/
+
+#hero {
+    position: relative;
+    top: 20vh;
+    width: 100%;
+    height: 100vh;
+    padding: 1rem;
+}
+
+/*CAROUSEL*/
+
+.carousel {
+    border: 3px solid #fff;
+}
+
+/*MODALE*/
+
+figcaption {
+    background-color:#ededed;
+    color:#000;
+}
+
 
 /********************************************/
 /* MEDIA QUERIES */
