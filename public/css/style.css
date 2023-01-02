@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 
+/* AFFICHAGE PAR DEFAUT (streaming) : Ordinateurs et écran de tout type (entre 992 px et 1199 px) */
+
 *{
-    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
 }
 
 body{
-    background:#000;
+    font-family: 'Poppins', sans-serif;
+    background-color:#000;
     color: #fff;
-    padding:1rem;
 }
 
 /*HEADER*/
@@ -15,38 +20,126 @@ body{
 header {
     position: fixed;
     top:0; left:0; right:0;
-    height: 100px;
-    background: #708090;
-    color: #F5F5F5;
+    height: 20vh;
+    width: 100%;
+    padding: 1rem;
+    background-color: #47525C;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0.5em;
+    justify-content: space-around;
+    font-size: 1.1rem;
+    font-weight: 400;
 }
 
-header img{
-    height: 7rem;
-    padding-top: 0.5rem
+.header__logo {
+    height: 10rem;
+    padding-top: 0.2rem;
 }
 
-header p{
-    padding: 0.5rem;
-}
-
-header nav ul{
+.header__nav ul {
     list-style: none;
-    display: inline-flex;
+    display: flex;
 }
+/*
+.header__nav__menu_bars {
+    width: 3.5rem;
+    display: none;
+}*/
 
-header nav ul li{
+.header__nav__menu__link {
     padding: 0.5rem;
 }
 
-header nav ul li a{
+.header__nav__menu__link a {
     color:#fff;
     text-decoration: none;
 }
 
-#test {
-    padding-top: 100px;
+a:hover {
+    color:#8296A8;
+    border-bottom: 1px solid;
+  }
+
+
+/********************************************/
+/* MEDIA QUERIES */
+
+/* Breaking-point n° 1 : Mobiles et petits écrans (768px max) */
+@media screen and (max-width: 768px) {
+
+    header {
+        justify-content: space-between;
+    }
+
+    .header__logo {
+        height: 6rem;
+        padding: 0.2rem;
+    }
+
+    .navbar__menu_bars {
+        display: block;
+    }
+
+    .header__slogan, .header__nav {
+        display: none;
+    }
+
+
+/* Breaking-point n° 2 : Tablettes (écrans entre 768 px et 991 px) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+    .header__logo {
+        height: 8rem;
+        padding-right: 1rem;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) and (orientation: landscape){
+
+    .header__logo {
+        height: 5rem;
+    }
+
+    .navbar__menu_bars {
+        width: 2rem;
+    }
+
+    .header__slogan, .header__nav {
+        font-size: 1rem;
+    }
+
+}
+
+/* Breaking-point n° 3 : Ordinateurs et écran de tout type (entre 992 px et 1199 px) au format paysage*/
+@media screen and (min-width: 992px) and (max-width: 1199px) and (orientation: landscape){
+
+    .header__logo {
+        height: 6rem;
+    }
+
+}
+
+/* Breaking-point n° 4 : Grand écran de tout type (à partir de 1200 px) */
+@media all and (min-width: 1200px) {
+
+    header {
+        justify-content: flex-start;
+    }
+
+    .header__slogan, .header__nav {
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .header__slogan {
+        padding: 2rem;
+    }
+
+    .header__nav {
+        position: absolute;
+        right: 4rem;
+    }
+
 }
