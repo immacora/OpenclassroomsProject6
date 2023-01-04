@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="public/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
     <script src="js/const.js" async></script>
+    <script src="js/header.js" async></script>
     <script src="js/script.js" async></script>
 </head>
 
 <body>
 
-    <header class="header">
+    <header>
         <div class="header__logo">
             <img src="public/img/logo_jsi_white.png" alt="logo JustStreamIt blanc" class="header__logo">
         </div>
         <p class="header__slogan">Tu ne sais pas quoi regarder pour passer une bonne soirée ?<br>Alors JustStreamIt</p>
         <nav class="header__nav">
-            <div class="header__burger__close" onclick="closeMobileMenu()">
+            <div class="header__burger__close">
                 <img src="public/img/close_white.png" alt="menu hamburger">
             </div>
             <ul class="header__nav__menu">
@@ -28,95 +29,16 @@
               <li class="header__nav__menu__link"><a href="#categories">Catégories</a></li>
             </ul>
         </nav>
-        <div class="header__burger" onclick="openMobileMenu()">
+        <div class="header__burger">
             <img src="public/img/menu_icon_white.png" alt="menu hamburger">
         </div>
     </header>
 
     <section id="hero">
-        <p>Photo du meilleur film (qui a la meilleure note Imdb toutes catégories confondues)</p>
-        <h2>Titre du film</h2>
-        <button>More info</button>
-        <p>résumé du film</p>
+        <div class="movie_img"></div>
+        <div class="movie_modale"></div>
     </section>
 
-    <p>--------Début de carousel/categorie------</p>
-    <section class="carousel">
-        <h2>Films les mieux notés</h2>
-        <p>--------Début de film------</p>
-        <figure>
-            <p class="img"></p>
-            <p>--------Début de modale------</p>
-            <figcaption>
-                <h2></h2>
-                <div class="movie">
-                    <p class="img_modal"></p>
-                    <p class="long_description"></p>
-                </div>
-                <div class="infos">
-                    <div class="date">
-                        <p>Sortie : </p>
-                        <p class="date_info"></p>
-                    </div>
-                    <div class="duration">
-                        <p>Durée : </p>
-                        <p class="duration_info"></p>
-                    </div>
-                    <div class="actors">
-                        <p>Acteurs : </p>
-                        <p class="actors_info"><ul></ul></p>
-                    </div>
-                    <div class="directors">
-                        <p>Réalisateur : </p>
-                        <p class="directors_info"></p>
-                    </div>
-                    <div class="countries">
-                        <p>Pays : </p>
-                        <p class="countries_info"></p>
-                    </div>
-                    <div class="genres">
-                        <p>Genres : </p>
-                        <p class="genres_info"><ul></ul></p>
-                    </div>
-                    <div class="avg_vote">
-                        <p>Résultat au Box Office : </p>
-                        <p class="avg_vote_info"></p>
-                    </div>
-                    <div class="imdb_score">
-                        <p>Score Imdb : </p>
-                        <p class="imdb_score_info"></p>
-                    </div>
-                    <div class="rated">
-                        <p>Classement : </p>
-                        <p class="rated_info"></p>
-                    </div>
-                </div>
-            </figcaption>
-            <p>--------Fin de modale------</p>
-        </figure>
-        <p>--------fin de film------</p>
-    </section>
-
-    <p>--------Fin de carousel------</p>
-
-    <section id="categories">
-        <div id="bestMovies">
-            <h3>Films les mieux notés</h3>
-            <p>Cette zone affiche les 7 autres films les mieux notés toutes catégories confondues. On pourra les faire défiler avec une flèche à gauche et à droite comme sur la maquette pour tous les parcourir.</p>
-        </div>
-        <div>
-            <h3>Catégorie 1</h3>
-            <p>Cette zone affiche les 7 films les mieux notés d’une catégorie donnée. On pourra les faire défiler avec une flèche à gauche et à droite comme sur la maquette pour tous les parcourir.</p>
-        </div>
-        <div>
-            <h3>Catégorie 2</h3>
-            <p>Cette zone affiche les 7 films les mieux notés d’une catégorie donnée. On pourra les faire défiler avec une flèche à gauche et à droite comme sur la maquette pour tous les parcourir.</p>
-        </div>
-        <div>
-            <h3>Catégorie 3</h3>
-            <p>Cette zone affiche les 7 films les mieux notés d’une catégorie donnée. On pourra les faire défiler avec une flèche à gauche et à droite comme sur la maquette pour tous les parcourir.</p>
-        </div>
-    </section>
 
     <footer>
         <p>© 2022 - JustStreamIt</p>
