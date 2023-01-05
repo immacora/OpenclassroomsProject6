@@ -17,19 +17,38 @@ body{
 
 /*MODALE*/
 
-.movie_modale {
+.movie_modal__card {
     background-color: #D5E6F5;
-    color:#000;
-    display: flex;
-    width: 50%;
-    height: 50%;
-    padding: 1rem;
     border-radius: 15px;
+    color:#000;
+    width: 80%;
+    height: 80%;
     overflow: auto;
 }
 
-.card__infos__title {
+.movie_modal__card__title, .movie_modal__card__time_infos {
+    background-color: #718EA8;
+    padding: 15px;
+    text-align: center;
+}
+
+.movie_modal__card__summary, .movie_modal__card__time_infos {
+    display: flex;
+    align-items: center;
+}
+
+.card__summary__long_description, .card__infos__title, .movie_modal__card__time_infos {
+    padding: 1rem;
     font-weight: 600;
+}
+
+.movie_modal__card__infos {
+    display: flex;
+    flex-direction: column;
+}
+
+.movie_modal__card__time_infos {
+    justify-content: space-evenly;
 }
 
 
@@ -40,7 +59,7 @@ header {
     width: 100%;
     height: 20vh;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top:0; left:0; right:0;
     padding: 1rem;
     display: flex;
@@ -99,8 +118,8 @@ header {
     top: 20vh;
     width: 100%;
     height: 100vh;
-    padding: 1rem;
 }
+
 
 /*CAROUSEL*/
 
