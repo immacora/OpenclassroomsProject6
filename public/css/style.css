@@ -123,20 +123,37 @@ header {
  #hero .movie_img {
     height: 100%;
     overflow: hidden;
-
 }
 
- #hero .movie_summary {
+ #hero .movie_summary, button {
     position: absolute;
     z-index: 1;
-    top: 50%;
-    padding-left: 5rem;
+    top: 30%;
+    padding-left: 3rem;
+}
+
+#hero .movie_summary h2, p {
+    padding-bottom: 1rem;
+}
+
+#hero button {
+    padding:.3rem 1.2rem;
+    border-radius: 5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    background-color:#3E4E5C;
+    color: #fff;
+    margin-left: 3rem;
+    margin-top: 10rem;
+    cursor: pointer;
 }
 
 #hero .movie_img img {
     width: 100%;
     position: relative;
     top: -50%;
+    opacity: 0.3;
 }
 
 
