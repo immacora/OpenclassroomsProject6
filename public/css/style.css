@@ -19,6 +19,10 @@ body{
 /*MODALE*/
 
 .movie_modal__card {
+    position: absolute;
+    top: 5vh;
+    left: 5vh;
+    z-index: 1;
     background-color: #D5E6F5;
     border-radius: 15px;
     color:#000;
@@ -44,8 +48,17 @@ body{
 }
 
 .movie_modal__card__infos {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
+}
+
+.movie_modal__card__infos > div {
+    border-bottom: #718EA8 1px solid;
+    display: flex;
+}
+
+.movie_modal__card__infos .card__infos__contents {
+    padding: 1rem;
 }
 
 .movie_modal__card__time_infos {
