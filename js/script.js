@@ -1,12 +1,26 @@
-/* CONSTANTES */
+/* CONSTANTES */ 
 
+// CATEGORIES : Listes des 10 premiers Ids des films les mieux notés (par catégorie : Toutes catégories confondues, Fantasy, Documentary et Thriller)
 const bestMoviesIds = getCategoryMoviesIds(ocMoviesURL + bestMoviesFilter);
 const bestMoviesFantasyIds = getCategoryMoviesIds(ocMoviesURL + bestMoviesFilter + categoryFantasy);
 const bestMoviesDocumentaryIds = getCategoryMoviesIds(ocMoviesURL + bestMoviesFilter + categoryDocumentary);
 const bestMoviesThrillerIds = getCategoryMoviesIds(ocMoviesURL + bestMoviesFilter + categoryThriller);
 
-/* FONCTIONS */
+// DOM
+const MovieImg = document.querySelector('.movie_img');
 
+
+/* ECOUTEUR D'EVENEMENTS */
+
+// Rend visible la modale qui suit l'image cible de l'événement
+MovieImg.addEventListener('click', function(event) {
+    let MovieModal = this.nextSibling.nextElementSibling
+    MovieModal.hidden = false;
+    event.stopPropagation();
+})
+
+
+/* FONCTIONS */
 
 /**
  * Requête fetch asynchone retournant la liste des premiers Ids des films (1 à 10 maximum) les mieux notés d'une catégorie par classement descendant.
@@ -78,10 +92,10 @@ async function createMovieImg(movieInfos) {
 
 
 /**
- * Crée l'élément du DOM movieModale et y ajoute les informations du film reçu en paramètre
+ * Crée l'élément du DOM movieModal et y ajoute les informations du film reçu en paramètre
  * @param { Promise } movieInfos
  */
-async function createMovieModale(movieInfos) {
+async function createMovieModal(movieInfos) {
     try {
         let movieInfosData = await movieInfos;
 
@@ -98,25 +112,14 @@ async function createMovieModale(movieInfos) {
         let movieImdbScore = await movieInfosData.imdb_score;
         let movieRated = await movieInfosData.rated;
 
-        let movieModaleCard = 
-            `<div class="movie_modale__card">
-
-                <h2 class="movie_modale__card__title">${movieTitle}</h2>
-                <div class="movie_modale__card__summary">
+        let movieModalCard = 
+            `<div class="movie_modal__card">
+                <h2 class="movie_modal__card__title">${movieTitle}</h2>
+                <div class="movie_modal__card__summary">
                     <div class="card__summary__img"><img alt="image du film" src="${movieImageURL}"></div>
                     <p class="card__summary__long_description">${movieLong_description}</p>
                 </div>
-
-                <div class="movie_modale__card__infos">
-
-                    <div class="card__infos__date">
-                        <p class="card__infos__title">Sortie : </p>
-                        <p class="card__infos__date__contents">${movieDatePublished}</p>
-                    </div>
-                    <div class="card__infos__duration">
-                        <p class="card__infos__title">Durée : </p>
-                        <p class="card__infos__duration__contents">${movieDuration}</p>
-                    </div>
+                <div class="movie_modal__card__infos">
                     <div class="card__infos__actors">
                         <p class="card__infos__title">Acteurs : </p>
                         <p class="card__infos__actors__contents"><ul>${movieActors}</ul></p>
@@ -145,12 +148,14 @@ async function createMovieModale(movieInfos) {
                         <p class="card__infos__title">Classement : </p>
                         <p class="card__infos__rated_info__contents">${movieRated}</p>
                     </div>
-
                 </div>
-
+                <div class="movie_modal__card__time_infos">
+                    <p class="card__time_infos__date">Sortie : ${movieDatePublished}</p>
+                    <p class="card__time_infos__duration">Durée : ${movieDuration} minutes</p>
+                </div>
             </div>`;
 
-        document.querySelector('.movie_modale').innerHTML = movieModaleCard;     
+        document.querySelector('.movie_modal').innerHTML = movieModalCard;     
 
     } catch (error) {
         alert("Erreur d'affichage des informations du film" + error);
@@ -158,7 +163,38 @@ async function createMovieModale(movieInfos) {
 }
 
 
-let movieInfos = getMovieInfos(1508669);
+/**
+ * Crée la section Hero
+ * @param { Promise } bestMoviesIds
+ */
+async function createHero(bestMoviesIds) {
+    try {
+        let bestMoviesIdsData = await bestMoviesIds;
+        let bestMovie = await bestMoviesIdsData[0];
+        let movieInfos = getMovieInfos(bestMovie);
+        let movieInfosData = await movieInfos;
+        let movieTitle = movieInfosData.title;
+        let movieLong_description = movieInfosData.long_description;
 
-createMovieImg(movieInfos);
-createMovieModale(movieInfos);
+        createMovieImg(movieInfos);
+        createMovieModal(movieInfos);
+
+        let movieSummaryTitle = document.createElement('h2');
+        movieSummaryTitle.className = 'movie_summary__title';
+        movieSummaryTitle.innerText = movieTitle;
+        document.querySelector('.movie_summary').appendChild(movieSummaryTitle);
+
+        let movieSummaryLongDescription = document.createElement('p');
+        movieSummaryLongDescription.className = 'movie_summary__long_description';
+        movieSummaryLongDescription.innerText = movieLong_description;
+        document.querySelector('.movie_summary').appendChild(movieSummaryLongDescription);
+
+    } catch (error) {
+        alert("Erreur d'affichage du meilleur film toutes catégories confondue" + error);
+    }
+}
+
+
+/* MAIN */
+
+createHero(bestMoviesIds);

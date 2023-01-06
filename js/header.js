@@ -2,7 +2,7 @@
 const headerBurger = document.querySelector('.header__burger');
 const headerBurgerClose = document.querySelector('.header__burger__close');
 
-/* Ecouteurs d'événements */
+/* ECOUTEURS D'EVENEMENTS */
 headerBurger.addEventListener('click', openMobileMenu);
 headerBurgerClose.addEventListener('click', closeMobileMenu);
 
