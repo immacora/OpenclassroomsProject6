@@ -31,10 +31,18 @@ body{
     overflow: auto;
 }
 
-.movie_modal__card__title, .movie_modal__card__time_infos {
+.movie_modal__card__header, .movie_modal__card__time_infos {
     background-color: #718EA8;
-    padding: 15px;
-    text-align: center;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__card__close {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
 }
 
 .movie_modal__card__summary, .movie_modal__card__time_infos {
@@ -138,14 +146,14 @@ header {
     overflow: hidden;
 }
 
- #hero .movie_summary, button {
+ #hero .movie_summary, .movie_buttons {
     position: absolute;
     z-index: 1;
     top: 30%;
     padding-left: 3rem;
 }
 
-#hero .movie_summary h2, p {
+#hero .movie_summary h2  {
     padding-bottom: 1rem;
 }
 
@@ -157,7 +165,7 @@ header {
     font-size: 1.1rem;
     background-color:#3E4E5C;
     color: #fff;
-    margin-left: 3rem;
+    margin-right: 1rem;
     margin-top: 10rem;
     cursor: pointer;
 }

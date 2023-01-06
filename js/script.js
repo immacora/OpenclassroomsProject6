@@ -9,18 +9,19 @@ const bestMoviesThrillerIds = getCategoryMoviesIds(ocMoviesURL + bestMoviesFilte
 // DOM
 const MovieImg = document.querySelector('.movie_img');
 
-
 /* ECOUTEUR D'EVENEMENTS */
 
 // Rend visible la modale qui suit l'image cible de l'événement
 MovieImg.addEventListener('click', function(event) {
-    let MovieModal = this.nextSibling.nextElementSibling
+    let MovieModal = this.nextSibling.nextElementSibling;
     MovieModal.hidden = false;
     event.stopPropagation();
+    const headerCardClose = document.querySelector('.header__card__close');
+    headerCardClose.addEventListener('click', closeModal);
 })
 
-
 /* FONCTIONS */
+
 
 /**
  * Requête fetch asynchone retournant la liste des premiers Ids des films (1 à 10 maximum) les mieux notés d'une catégorie par classement descendant.
@@ -114,44 +115,49 @@ async function createMovieModal(movieInfos) {
 
         let movieModalCard = 
             `<div class="movie_modal__card">
-                <h2 class="movie_modal__card__title">${movieTitle}</h2>
+                <div class="movie_modal__card__header">
+                    <h2 class="header__card__title">${movieTitle}</h2>
+                    <div class="header__card__close">
+                        <img src="public/img/close_white.png" alt="modal close">
+                    </div>
+                </div>
                 <div class="movie_modal__card__summary">
                     <div class="card__summary__img"><img alt="image du film" src="${movieImageURL}"></div>
                     <p class="card__summary__long_description">${movieLong_description}</p>
                 </div>
                 <div class="movie_modal__card__infos">
                     <div class="card__infos__actors">
-                        <p class="card__infos__title">Acteurs : </p>
-                        <p class="card__infos__actors__contents"><ul>${movieActors}</ul></p>
+                        <p class="card__infos__title">Acteurs: </p>
+                        <p class="card__infos__contents">${movieActors}</p>
                     </div>
                     <div class="card__infos__directors">
-                        <p class="card__infos__title">Réalisateur : </p>
-                        <p class="card__infos__directors__contents">${movieDirectors}</p>
+                        <p class="card__infos__title">Réalisateur: </p>
+                        <p class="card__infos__contents">${movieDirectors}</p>
                     </div>
                     <div class="card__infos__countries">
-                        <p class="card__infos__title">Pays : </p>
-                        <p class="card__infos__countries__contents">${movieCountries}</p>
+                        <p class="card__infos__title">Pays: </p>
+                        <p class="card__infos__contents">${movieCountries}</p>
                     </div>
                     <div class="card__infos__genres">
-                        <p class="card__infos__title">Genres : </p>
-                        <p class="card__infos__genres__contents"><ul>${movieGenres}</ul></p>
+                        <p class="card__infos__title">Genres: </p>
+                        <p class="card__infos__contents">${movieGenres}</p>
                     </div>
                     <div class="card__infos__avg_vote">
-                        <p class="card__infos__title">Résultat au Box Office : </p>
-                        <p class="card__infos__avg_vote__contents">${movieAvgVote}</p>
+                        <p class="card__infos__title">Résultat au Box Office: </p>
+                        <p class="card__infos__contents">${movieAvgVote}</p>
                     </div>
                     <div class="card__infos__imdb_score">
-                        <p class="card__infos__title">Score Imdb : </p>
-                        <p class="card__infos__imdb_score__contents">${movieImdbScore}</p>
+                        <p class="card__infos__title">Score Imdb: </p>
+                        <p class="card__infos__contents">${movieImdbScore}</p>
                     </div>
                     <div class="card__infos__rated">
-                        <p class="card__infos__title">Classement : </p>
-                        <p class="card__infos__rated_info__contents">${movieRated}</p>
+                        <p class="card__infos__title">Classement: </p>
+                        <p class="card__infos__contents">${movieRated}</p>
                     </div>
                 </div>
                 <div class="movie_modal__card__time_infos">
-                    <p class="card__time_infos__date">Sortie : ${movieDatePublished}</p>
-                    <p class="card__time_infos__duration">Durée : ${movieDuration} minutes</p>
+                    <p class="card__time_infos__date">Sortie: ${movieDatePublished}</p>
+                    <p class="card__time_infos__duration">Durée: ${movieDuration} minutes</p>
                 </div>
             </div>`;
 
@@ -162,6 +168,10 @@ async function createMovieModal(movieInfos) {
     }
 }
 
+/* Ferme la modale. */
+function closeModal() {
+    document.querySelector('.movie_modal').hidden = true;
+}
 
 /**
  * Crée la section Hero
@@ -194,7 +204,7 @@ async function createHero(bestMoviesIds) {
     }
 }
 
-
 /* MAIN */
+
 
 createHero(bestMoviesIds);
