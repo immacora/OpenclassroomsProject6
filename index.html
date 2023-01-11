@@ -1,84 +1,167 @@
 <!DOCTYPE html>
-<html lang="fr">
+    <html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JustStreamIt - Regardez les meilleurs films en streaming</title>
-    <link rel="icon" type="image/x-icon" href="public/img/favicon_jsi.png">
-    <link rel="stylesheet" href="public/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
-    <script src="js/const.js" async></script>
-    <script src="js/header.js" async></script>
-    <script src="js/script.js" async></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JustStreamIt - Regardez les meilleurs films en streaming</title>
 
-<body>
+        <!-- favicon -->
+        <link rel="icon" type="image/x-icon" href="public/img/favicon_jsi.png">
 
-    <header>
-        <div class="header__logo">
-            <img src="public/img/logo_jsi_white.png" alt="logo JustStreamIt blanc" class="header__logo">
-        </div>
-        <p class="header__slogan">Tu ne sais pas quoi regarder pour passer une bonne soirée ?<br>Alors JustStreamIt</p>
-        <nav class="header__nav">
-            <div class="header__burger__close">
-                <img src="public/img/close_white.png" alt="menu hamburger close">
+        <!-- CSS Links -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="public/css/style.css">
+        
+        <!-- Fontawesome CDN Link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+
+        <!-- JavaScript Links -->
+        <script src="js/const.js" async></script>
+        <script src="js/header.js" async></script>
+        <script src="js/script.js" async></script>
+    </head>
+
+    <body>
+
+        <header>
+            <div class="header__logo">
+                <img src="public/img/logo_jsi_white.png" alt="logo JustStreamIt blanc" class="header__logo">
             </div>
-            <ul class="header__nav__menu">
-              <li class="header__nav__menu__link"><a href="index.html">Accueil</a></li>
-              <li class="header__nav__menu__link"><a href="#categories">Catégories</a></li>
-            </ul>
-        </nav>
-        <div class="header__burger">
-            <img src="public/img/menu_icon_white.png" alt="menu hamburger">
-        </div>
-    </header>
+            <p class="header__slogan">Tu ne sais pas quoi regarder pour passer une bonne soirée ?<br>Alors JustStreamIt</p>
+            <nav class="header__nav">
+                <div class="header__burger__close"><i class="fa-solid fa-xmark"></i></div>
+                <ul class="header__nav__menu">
+                    <li class="header__nav__menu__link"><a href="index.html">Accueil</a></li>
+                    <li class="header__nav__menu__link"><a href="#categories">Catégories</a></li>
+                </ul>
+            </nav>
+            <div class="header__burger"><i class="fa-solid fa-bars"></i></div>
+        </header>
 
-    <section id="hero">
-        <div class="movie_img">
-            <div class="movie_summary"></div>
-            <div class="movie_buttons">
-                <button>Play</button>
-                <button>More info</button>
+        <section id="hero">
+            <div class="movie_img">
+                <div class="movie_summary"></div>
+                <div class="movie_buttons">
+                    <button>
+                        <i class="fa-solid fa-circle-play"></i>
+                        <p>Play</p>
+                    </button>
+                    <button>
+                        <i class="fa-solid fa-circle-info"></i>
+                        <p>More info</p>
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="movie_modal" hidden="true"></div>
-    </section>
-
-    <section id="categories">
-
-        <section id="bestMovies">
-            <h3>Films les mieux notés</h3>
-            <p>Cette zone affiche les 7 autres films les mieux notés toutes catégories confondues. On pourra les faire défiler avec une flèche à gauche et à droite comme sur la maquette pour tous les parcourir.</p>
-            <div class="movie_img"></div>
-            <div class="movie_modal"></div>
+            <div class="movie_modal" hidden="true"></div>
         </section>
 
-        <section id="categorie1">
-            <h3>Catégorie 1</h3>
-            <p>Cette zone affiche les 7 films les mieux notés d'une catégorie donnée. On pourra les faire défiler avec une flèche à gauche et à droite comme sur la maquette pour tous les parcourir.</p>
-            <div class="movie_img"></div>
-            <div class="movie_modal"></div>
+        <section id="categories">
+
+            <section id="bestMovies" class="categorie">
+                <h3>Films les mieux notés</h3>
+                <p>Cette zone affiche les 7 autres films les mieux notés toutes catégories confondues. On pourra les faire défiler avec une flèche à gauche et à droite comme sur la maquette pour tous les parcourir.</p>
+
+                <div class="movie_img"></div>
+                <div class="movie_modal"></div>
+
+                <section class="carousel__wrapper">
+
+                    <div class="arrow_nav_left"><i class="fa-solid fa-angle-left"></i></div>
+                    
+                    <section class="carousel">
+
+                        <ul class="carousel-items">
+                            <li class="carousel-item">
+                                <div class="card">
+                                    <img
+                                        src="https://m.media-amazon.com/images/M/MV5BNDEyYTA5OWEtYjNiYS00MGZlLThjYzEtMTc1Zjk2NDRmZmYxXkEyXkFqcGdeQXVyNzIwNTQyMw@@._V1_UY268_CR1,0,182,268_AL_.jpg">
+                                    <a href="#" class="button">Read more</a>
+                                </div>
+                            </li>
+                            <li class="carousel-item">
+                                <div class="card">
+                                    <img
+                                        src="https://m.media-amazon.com/images/M/MV5BNDEyYTA5OWEtYjNiYS00MGZlLThjYzEtMTc1Zjk2NDRmZmYxXkEyXkFqcGdeQXVyNzIwNTQyMw@@._V1_UY268_CR1,0,182,268_AL_.jpg">
+                                    <a href="#" class="button">Read more</a>
+                                </div>
+                            </li>
+                            <li class="carousel-item">
+                                <div class="card">
+                                    <img
+                                        src="https://m.media-amazon.com/images/M/MV5BNDEyYTA5OWEtYjNiYS00MGZlLThjYzEtMTc1Zjk2NDRmZmYxXkEyXkFqcGdeQXVyNzIwNTQyMw@@._V1_UY268_CR1,0,182,268_AL_.jpg">
+                                    <a href="#" class="button">Read more</a>
+                                </div>
+                            </li>
+                            <li class="carousel-item">
+                                <div class="card">
+                                    <img
+                                        src="https://m.media-amazon.com/images/M/MV5BNDEyYTA5OWEtYjNiYS00MGZlLThjYzEtMTc1Zjk2NDRmZmYxXkEyXkFqcGdeQXVyNzIwNTQyMw@@._V1_UY268_CR1,0,182,268_AL_.jpg">
+                                    <a href="#" class="button">Read more</a>
+                                </div>
+                            </li>
+                            <li class="carousel-item">
+                                <div class="card">
+                                    <img
+                                        src="https://m.media-amazon.com/images/M/MV5BNDEyYTA5OWEtYjNiYS00MGZlLThjYzEtMTc1Zjk2NDRmZmYxXkEyXkFqcGdeQXVyNzIwNTQyMw@@._V1_UY268_CR1,0,182,268_AL_.jpg">
+                                    <a href="#" class="button">Read more</a>
+                                </div>
+                            </li>
+                            <li class="carousel-item">
+                                <div class="card">
+                                    <img
+                                        src="https://m.media-amazon.com/images/M/MV5BNDEyYTA5OWEtYjNiYS00MGZlLThjYzEtMTc1Zjk2NDRmZmYxXkEyXkFqcGdeQXVyNzIwNTQyMw@@._V1_UY268_CR1,0,182,268_AL_.jpg">
+                                    <a href="#" class="button">Read more</a>
+                                </div>
+                            </li>
+                            <li class="carousel-item">
+                                <div class="card">
+                                    <img
+                                        src="https://m.media-amazon.com/images/M/MV5BNDEyYTA5OWEtYjNiYS00MGZlLThjYzEtMTc1Zjk2NDRmZmYxXkEyXkFqcGdeQXVyNzIwNTQyMw@@._V1_UY268_CR1,0,182,268_AL_.jpg">
+                                    <a href="#" class="button">Read more</a>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </section>
+
+                    <div class="arrow_nav_right"><i class="fa-solid fa-angle-right"></i></div>
+
+                </section>
+            </section>
+
+            <section id="test">
+                <h3>Films les mieux notés</h3>
+                <p>Cette zone affiche les 7 autres films les mieux notés toutes catégories confondues. On pourra les faire défiler avec une flèche à gauche et à droite comme sur la maquette pour tous les parcourir.</p>
+                <div class="movie_img"></div>
+                <div class="movie_modal"></div>
+            </section>
+
+            <section id="categorie1" class="categorie">
+                <h3>Catégorie 1</h3>
+                <p>Cette zone affiche les 7 films les mieux notés d'une catégorie donnée. On pourra les faire défiler avec une flèche à gauche et à droite comme sur la maquette pour tous les parcourir.</p>
+                <div class="movie_img"></div>
+                <div class="movie_modal"></div>
+            </section>
+
+            <section id="categorie2" class="categorie">
+                <h3>Catégorie 2</h3>
+                <p>Cette zone affiche les 7 films les mieux notés d'une catégorie donnée. On pourra les faire défiler avec une flèche à gauche et à droite comme sur la maquette pour tous les parcourir.</p>
+                <div class="movie_img"></div>
+                <div class="movie_modal"></div>
+            </section>
+
+            <section id="categorie3" class="categorie">
+                <h3>Catégorie 3</h3>
+                <p>Cette zone affiche les 7 films les mieux notés d'une catégorie donnée. On pourra les faire défiler avec une flèche à gauche et à droite comme sur la maquette pour tous les parcourir.</p>
+                <div class="movie_img"></div>
+                <div class="movie_modal"></div>
+            </section>
+
         </section>
 
-        <section id="categorie2">
-            <h3>Catégorie 2</h3>
-            <p>Cette zone affiche les 7 films les mieux notés d'une catégorie donnée. On pourra les faire défiler avec une flèche à gauche et à droite comme sur la maquette pour tous les parcourir.</p>
-            <div class="movie_img"></div>
-            <div class="movie_modal"></div>
-        </section>
-
-        <section id="categorie3">
-            <h3>Catégorie 3</h3>
-            <p>Cette zone affiche les 7 films les mieux notés d'une catégorie donnée. On pourra les faire défiler avec une flèche à gauche et à droite comme sur la maquette pour tous les parcourir.</p>
-            <div class="movie_img"></div>
-            <div class="movie_modal"></div>
-        </section>
-
-    </section>
-
-    <footer>
-        <p>© 2022 - JustStreamIt</p>
-    </footer>
-</body>
+        <footer>
+            <p>© 2022 - JustStreamIt</p>
+        </footer>
+    </body>
 </html>
