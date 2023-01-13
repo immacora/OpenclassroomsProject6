@@ -5,6 +5,7 @@ import { ocMoviesURL, bestMoviesURL, bestMoviesFantasyURL, bestMoviesDocumentary
 /**
  * Requête fetch asynchone retournant la liste des premiers Ids des films (1 à 10 maximum) les mieux notés d'une catégorie par classement descendant.
  * @param { String } url
+ * @param { Object=[] } moviesIds
  * @return { Promise } moviesIds
  */
 async function getMoviesIds(categorieUrl, moviesIds=[]) {
@@ -16,7 +17,7 @@ async function getMoviesIds(categorieUrl, moviesIds=[]) {
             const previous = data.previous;
             const next = data.next;
             const results = data.results;
-            // Récupère l'id de chaque film de la catégorie et l'ajoute à la liste OKOKOKOK
+            // Récupère l'id de chaque film de la catégorie et l'ajoute à la liste
             results.forEach(result => {
                 let movieId = result.id;
                 moviesIds.push(movieId);
@@ -24,7 +25,6 @@ async function getMoviesIds(categorieUrl, moviesIds=[]) {
             // Rappelle la fonction (recursive) s'il existe une seconde page et retourne la liste
             if ((previous === null) & (next != null)) {
                 getMoviesIds(next, moviesIds);
-
                 return moviesIds;
             } else {
                 return moviesIds;
@@ -39,7 +39,7 @@ async function getMoviesIds(categorieUrl, moviesIds=[]) {
 
 /**
  * Requête fetch asynchone retournant les informations d'un film cherché par id.
- * @param { String } movieId
+ * @param { Number } movieId
  * @return { Promise } movieInfos
  */
 export async function getMovieInfos(movieId) {
