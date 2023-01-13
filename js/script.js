@@ -120,7 +120,6 @@ function createMovieCard(movieInfos, targetDomElement, movieTitle) {
     }
 }
 
-
 /**
  * Création de l'affichage du Hero
  * @param { Object } bestMoviesIds
@@ -146,5 +145,29 @@ async function createHero(bestMoviesIds) {
     } catch (error) {
         alert("Erreur d'affichage du meilleur film toutes catégories confondue" + error);
     }
+}
+
+
+/**
+ * Suppression des ids de catégorie en trop : le 1er id pour la catégorie bestsMovies (1 catégorie = 2 ids min.) et les derniers si le nombre d'ids restants est supérieur à 7.
+ * @param { Object } moviesIds
+ * @param { String } categoryName
+ * @return { Object } categoryMoviesIds
+ */
+function removeOverageIds(moviesIds, categoryName) {
+    if (categoryName === 'bestsMovies') {moviesIds.shift();}
+
+    switch (moviesIds.length) {
+        case 10:
+            moviesIds.splice(-3, 3);
+            break;
+        case 9:
+            moviesIds.splice(-2, 2);
+            break;
+        case 8:
+            moviesIds.pop();
+            break;
+    }
+    return moviesIds;
 }
 
