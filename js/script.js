@@ -119,3 +119,32 @@ function createMovieCard(movieInfos, targetDomElement, movieTitle) {
         alert("Erreur de création de la carte du film" + error);
     }
 }
+
+
+/**
+ * Création de l'affichage du Hero
+ * @param { Object } bestMoviesIds
+ */
+async function createHero(bestMoviesIds) {
+    try {
+        // Récupération des données du film
+        const movieId = bestMoviesIds[0];
+        const movieInfos = await getMovieInfos(movieId);
+        const movieTitle = movieInfos.title;
+        const movieLongDescription = movieInfos.long_description;
+
+        // Rattachement des éléments à l'élément parent du DOM
+        document.querySelector('.movie_summary__title').innerHTML = movieTitle;
+        document.querySelector('.movie_summary__long_description').innerHTML = movieLongDescription;
+
+        // Création de la cible du DOM pour insertion de la movieCard
+        const targetDomElement = document.querySelector('#hero');
+
+        // Création de la movieCard
+        createMovieCard(movieInfos, targetDomElement, movieTitle);
+
+    } catch (error) {
+        alert("Erreur d'affichage du meilleur film toutes catégories confondue" + error);
+    }
+}
+
