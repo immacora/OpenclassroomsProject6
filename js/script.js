@@ -86,3 +86,36 @@ function createMovieModal(movieInfos, movieImgURL, movieTitle) {
         alert("Erreur d'affichage des informations du film" + error);
     }
 }
+
+
+/**
+ * Création de la movieCard du film reçu en paramètre
+ * @param { Object } movieInfos
+ * @param { Object } targetDomElement
+ * @param { String } movieTitle
+ */
+function createMovieCard(movieInfos, targetDomElement, movieTitle) {
+    try {
+    // Création des éléments du dom recevant les données
+    const movieCard = document.createElement('div');
+    movieCard.className = 'movie_card';
+    const movieImg = document.createElement('div');
+    movieImg.className = 'movie_img';
+    const movieImgURL = document.createElement('img');
+    movieImgURL.src = movieInfos.image_url;
+    movieImgURL.alt = 'image du film ' + movieTitle;
+    const movieModal = document.createElement('div');
+    movieModal.className = 'movie_modal';
+
+    // Rattachement des éléments créés à l'élément parent du DOM
+    targetDomElement.appendChild(movieCard);
+    movieCard.appendChild(movieImg);
+    movieImg.appendChild(movieImgURL);
+    movieCard.appendChild(movieModal);
+
+    createMovieModal(movieInfos, movieImgURL, movieTitle);
+
+    } catch (error) {
+        alert("Erreur de création de la carte du film" + error);
+    }
+}
