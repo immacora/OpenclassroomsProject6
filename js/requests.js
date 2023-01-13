@@ -16,7 +16,7 @@ async function getMoviesIds(categorieUrl, moviesIds=[]) {
             const previous = data.previous;
             const next = data.next;
             const results = data.results;
-            // Récupère l'id de chaque film de la catégorie et l'ajoute à la liste
+            // Récupère l'id de chaque film de la catégorie et l'ajoute à la liste OKOKOKOK
             results.forEach(result => {
                 let movieId = result.id;
                 moviesIds.push(movieId);
@@ -24,6 +24,7 @@ async function getMoviesIds(categorieUrl, moviesIds=[]) {
             // Rappelle la fonction (recursive) s'il existe une seconde page et retourne la liste
             if ((previous === null) & (next != null)) {
                 getMoviesIds(next, moviesIds);
+
                 return moviesIds;
             } else {
                 return moviesIds;
@@ -45,7 +46,6 @@ export async function getMovieInfos(movieId) {
     try {
         let response = await fetch(ocMoviesURL + movieId);
         let movieInfos = await response.json();
-        console.log(222);
         return movieInfos;
     } catch (error) {
         alert("Film non trouvé" + error);
@@ -54,7 +54,7 @@ export async function getMovieInfos(movieId) {
 
 // Listes des 10 premiers Ids des films les mieux notés de chaque catégorie : Toutes catégories confondues, Fantasy, Documentary et Thriller.
 
-export const bestMoviesIds = getMoviesIds(bestMoviesURL);
-export const bestMoviesFantasyIds = getMoviesIds(bestMoviesFantasyURL);
-export const bestMoviesDocumentaryIds = getMoviesIds(bestMoviesDocumentaryURL);
-export const bestMoviesThrillerIds = getMoviesIds(bestMoviesThrillerURL);
+export const bestMoviesIds = await getMoviesIds(bestMoviesURL);
+export const bestMoviesFantasyIds = await getMoviesIds(bestMoviesFantasyURL);
+export const bestMoviesDocumentaryIds = await getMoviesIds(bestMoviesDocumentaryURL);
+export const bestMoviesThrillerIds = await getMoviesIds(bestMoviesThrillerURL);
