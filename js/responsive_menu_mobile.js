@@ -6,7 +6,6 @@ const headerBurgerClose = document.querySelector('.header__burger__close');
 headerBurger.addEventListener('click', openMobileMenu);
 headerBurgerClose.addEventListener('click', closeMobileMenu);
 
-
 /* FONCTIONS */
 
 /* Ajoute la classe "open" au memu (classe header__nav). */

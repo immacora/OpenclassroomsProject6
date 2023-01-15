@@ -1,4 +1,4 @@
-/* CONSTANTES FAIRE UNE CLASSE */
+/* CONSTANTES */
 
 // CATEGORY NAME
 export const bestsMoviesCategoryName = 'bestsMovies';
