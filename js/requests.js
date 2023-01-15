@@ -1,4 +1,4 @@
-import { ocMoviesURL, bestMoviesURL, bestMoviesFantasyURL, bestMoviesDocumentaryURL, bestMoviesThrillerURL } from './url_consts.js';
+import { ocMoviesURL, bestMoviesURL, bestMoviesFantasyURL, bestMoviesDocumentaryURL, bestMoviesThrillerURL } from './consts.js';
 
 // ---- REQUETES FETCH ----//
 
