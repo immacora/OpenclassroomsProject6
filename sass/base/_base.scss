@@ -1,0 +1,17 @@
+/* BASIC STYLE */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  font-family: $font-family;
+  font-weight: $default-font-weight;
+  background-color: $color-black;
+  color: $color-white;
+}
