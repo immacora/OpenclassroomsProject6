@@ -1,5 +1,7 @@
 /* BASIC STYLE */
 
+// AFFICHAGE PAR DEFAUT (streaming) : Ordinateurs et écran de tout type (entre 992 px et 1199 px)
+
 *,
 *::before,
 *::after {
@@ -10,8 +12,14 @@
 }
 
 body {
-  font-family: $font-family;
-  font-weight: $default-font-weight;
   background-color: $color-black;
+}
+
+li {
+  list-style: none;
+}
+
+a {
   color: $color-white;
+  text-decoration: none;
 }

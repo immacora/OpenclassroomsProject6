@@ -1,0 +1,24 @@
+/* HEADER */
+
+header {
+  background-color: $color-primary;
+  width: 100%;
+  height: 20vh;
+  position: fixed;
+  z-index: 2;
+  top:0; left:0; right:0;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .header__logo {
+    padding: 0.2rem 0 0.2rem 0;
+    height: 8rem;
+  }
+
+  .header__slogan {
+    padding: 0 1rem 0 1rem;
+    font-weight: 400;
+  }
+}
