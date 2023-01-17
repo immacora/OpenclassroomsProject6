@@ -1,7 +1,6 @@
 /* BASIC STYLE */
 
-// AFFICHAGE PAR DEFAUT (streaming) : Ordinateurs et écran de tout type (entre 992 px et 1199 px)
-
+// ALL
 *,
 *::before,
 *::after {
@@ -11,15 +10,19 @@
   outline: none;
 }
 
+// BODY
 body {
-  background-color: $color-black;
+  background-color: $black;
 }
 
-li {
-  list-style: none;
-}
-
+// LINKS
 a {
-  color: $color-white;
+  color: $white;
   text-decoration: none;
+}
+
+
+// LIST ELEMENTS
+ li {
+  list-style: none;
 }

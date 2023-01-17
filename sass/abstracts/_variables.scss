@@ -1,0 +1,63 @@
+/* VARIABLES */
+
+
+/* FONTS */
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'Poppins', sans-serif !default;
+
+
+/* COLORS */
+
+// Main brand color
+/// @type Color
+$main-grey: #3E4E5C !default;
+
+// Hover color
+/// @type Color
+$hover: #9BC4E8 !default;
+
+// Modal color
+/// @type Color
+$modal: #718EA8 !default;
+
+// Modal color background
+/// @type Color
+$modal-background: #D5E6F5 !default;
+
+// Modal text
+/// @type Color
+$modal-text: #2C3842 !default;
+
+// White : text, a
+/// @type Color
+$white: #fff !default;
+
+// Black : main background
+/// @type Color
+$black: #000 !default;
+
+
+/* BREAKPOINTS */
+
+// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 992px,
+  'xl': 1200px,
+  'xxl': 1400px,
+) !default;
+
+
+
+/*
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+*/
+
+$colour-4: #465869;
