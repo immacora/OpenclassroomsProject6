@@ -1,0 +1,23 @@
+/* BUTTON */
+
+button {
+  display: flex;
+  align-items: center;
+  margin-right: 1.5rem;
+  padding:.6rem 1.2rem;
+  border-radius: 5rem;
+  border: none;
+  font-family: $text-font-stack;
+  font-size: 1.1rem;
+  color: $white;
+  background-color: $main-grey;
+  cursor: pointer;
+
+  &:hover {
+    color: $hover;
+  }
+
+  i {
+    margin-right: .7rem;
+  }
+}

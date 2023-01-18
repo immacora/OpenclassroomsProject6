@@ -1,0 +1,5 @@
+/* MIXINS */
+
+@mixin hero-shadow{
+    text-shadow: $black 0.2rem 0.2rem 0.2rem;
+}
