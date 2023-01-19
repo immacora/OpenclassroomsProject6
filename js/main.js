@@ -2,7 +2,7 @@ import { bestMoviesIds, bestMoviesFantasyIds, bestMoviesDocumentaryIds, bestMovi
 
 import { bestsMoviesCategoryName, fantasyCategoryName, documentaryCategoryName, thrillerCategoryName, bestsMoviesCategoryTitle, fantasyCategoryTitle, documentaryCategoryTitle, thrillerCategoryTitle, bestMoviesCategoryDomElement, categorie1DomElement, categorie2DomElement, categorie3DomElement } from './consts.js';
 
-import { createMovieCard } from './movie_card_modal.js';
+import { createMovieCard } from './movie_card_and_modal.js';
 
 /**
  * Suppression des ids de catégorie en trop : le 1er id pour la catégorie bestsMovies (1 catégorie = 2 ids min.), et les 1 à 3 derniers si le nombre d'ids restants est supérieur à 7.

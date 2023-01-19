@@ -1,6 +1,6 @@
 /* CONSTANTES du DOM */
-const headerBurger = document.querySelector('.header__burger');
-const headerBurgerClose = document.querySelector('.header__burger__close');
+const headerBurger = document.querySelector('.menu__burger');
+const headerBurgerClose = document.querySelector('.menu__burger__close');
 
 /* ECOUTEURS D'EVENEMENTS */
 headerBurger.addEventListener('click', openMobileMenu);
