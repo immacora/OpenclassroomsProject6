@@ -1,5 +1,14 @@
 /* MIXINS */
 
-@mixin hero-shadow{
-    text-shadow: $black 0.2rem 0.2rem 0.2rem;
+@mixin hero-shadow {
+  text-shadow: $black 0.2rem 0.2rem 0.2rem;
+}
+
+@mixin modal-header-footer {
+  background-color: $modal;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  font-weight: 600;
 }

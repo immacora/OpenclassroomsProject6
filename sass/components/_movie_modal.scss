@@ -1,0 +1,48 @@
+/* MODAL */
+
+.movie_modal {
+  position: fixed;
+  z-index: 1;
+  top: 25vh;
+  right: 5vw;
+  height: 70vh;
+  width: 90vw;
+  overflow: auto;
+  flex-direction: column;
+  background-color: $modal-background;
+  color: $modal-text;
+  border-radius: 15px;
+
+  &__header {
+    @include modal-header-footer;
+  }
+  &__close {
+    font-size: 1.9rem;
+  }
+  &__summary {
+    display: flex;
+    align-items: center;
+    
+    &__long_description {
+      padding: 1rem;
+      font-weight: 600;
+    }
+  }
+  &__infos {
+    > div {
+      display: flex;
+      align-items: center;
+      border-bottom: #718EA8 1px solid;
+    }
+    &__title {
+        font-weight: 600;
+        padding-left: 1rem;
+    }
+    &__contents {
+        padding: .5rem;
+    }
+  }
+  &__time_infos {
+    @include modal-header-footer;
+  }
+}

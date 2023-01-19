@@ -3,7 +3,7 @@
 
 /* FONTS */
 
-/// Regular font family
+// Regular font family
 /// @type List
 $text-font-stack: 'Poppins', sans-serif !default;
 
@@ -28,7 +28,7 @@ $modal-background: #D5E6F5 !default;
 
 // Modal text
 /// @type Color
-$modal-text: #2C3842 !default;
+$modal-text: #2c3842 !default;
 
 // White : text, a
 /// @type Color
@@ -41,9 +41,9 @@ $black: #000 !default;
 
 /* BREAKPOINTS */
 
-// Breakpoints map
-/// @prop {String} keys - Keys are identifiers mapped to a given length
-/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+// Breakpoints map, AFFICHAGE PAR DEFAUT (streaming) : Ordinateurs et écran de tout type (entre 992 px et 1199 px)
+/// @prop {String} keys
+/// @prop {Map} values
 $breakpoints: (
   'small': 320px,
   'medium': 768px,
@@ -51,13 +51,3 @@ $breakpoints: (
   'xl': 1200px,
   'xxl': 1400px,
 ) !default;
-
-
-
-/*
-  'small': 320px,
-  'medium': 768px,
-  'large': 1024px,
-*/
-
-$colour-4: #465869;
