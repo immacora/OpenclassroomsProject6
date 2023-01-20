@@ -1,0 +1,25 @@
+/* CAROUSEL */
+
+.carousel__wrapper {
+  display: flex;
+  align-items: center;
+
+  i {
+    font-size: 3rem;
+  }
+
+  .carousel {
+    overflow: hidden;
+
+    .carousel-items {
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: flex-start;
+
+      .carousel-item {
+        display: flex;
+        overflow: hidden;
+      }
+    }
+  }
+}
