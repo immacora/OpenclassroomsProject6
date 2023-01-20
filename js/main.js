@@ -6,26 +6,6 @@ import { bestsMoviesCategoryName, fantasyCategoryName, documentaryCategoryName, 
 
 import { createMovieCard } from './movie_card_and_modal.js';
 
-/**
- * Suppression des 1 à 3 derniers id de catégorie si le nombre d'ids est supérieur à 7.
- * @param { Object } moviesIds
- * @param { String } categoryName
- */
-function removeOverageIds(moviesIds) {
-
-    switch (moviesIds.length) {
-        case 10:
-            moviesIds.splice(-3, 3);
-            break;
-        case 9:
-            moviesIds.splice(-2, 2);
-            break;
-        case 8:
-            moviesIds.pop();
-            break;
-    }
-    return moviesIds;
-}
 
 /**
  * Création du carrousel pour la catégorie reçue en paramètre
@@ -41,9 +21,6 @@ async function createCarousel(moviesIds, categoryName, categoryDomElement, categ
         moviesIds.shift();
     }
 
-    // Supprime les ids de catégorie en trop
-    removeOverageIds(moviesIds);
-
     // Récupère l'élément du DOM "ul" de la catégorie qui accueillera les films
     const carouselItems = document.querySelector(categoryDomElement + " .carousel-items");
 
@@ -51,8 +28,8 @@ async function createCarousel(moviesIds, categoryName, categoryDomElement, categ
     document.querySelector(categoryDomElement + " h2").innerHTML = categoryTitle
 
     try {
-        // Boucle sur la liste des ids pour récupérer des données des films, créer l'élément cible du DOM, puis les movieCard
-        for (let i = 0; i < (moviesIds.length); i++) {
+        // Boucle sur la liste des ids pour récupérer des données des 7 premiers films, créer l'élément cible du DOM, puis les movieCard
+        for (let i = 0; i < 7; i++) {
 
             const movieNumber = i + 1;
             const movieId = moviesIds[i];
@@ -88,45 +65,7 @@ createCarousel(bestMoviesFantasyIds, fantasyCategoryName, categorie1DomElement, 
 createCarousel(bestMoviesDocumentaryIds, documentaryCategoryName, categorie2DomElement, documentaryCategoryTitle);
 createCarousel(bestMoviesThrillerIds, thrillerCategoryName, categorie3DomElement, thrillerCategoryTitle);
 
-
-
-
 // Initialise la liste des ids des films dans le DOM créée dans la function createCarousel
-/*let categoryMovieDomIds = [];
-console.log(11111111111111);
-console.log(categoryMovieDomIds);
-
-console.log(2222222222);
-
-console.log(categoryMovieDomIds.length);
-
-console.log(3333333333333);
-
-
-
 const moviesCard = document.getElementsByClassName('movie_card');
 console.log(moviesCard);
 console.log(moviesCard.length);
-
-
-
-async function getmoviesCard() {
-    const moviesCard = document.getElementsByClassName('movie_card');
-    return moviesCard
-}
-
-
-
-
-
-const TESTASYNCmoviesCard = await getmoviesCard();
-console.log(TESTASYNCmoviesCard, 6666666666666666);
-console.log(TESTASYNCmoviesCard.length);*/
-
-
-
-
-
-
-
-
