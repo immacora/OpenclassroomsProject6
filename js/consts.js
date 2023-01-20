@@ -1,4 +1,5 @@
-/* CONSTANTES FAIRE UNE CLASSE CATEGORY */
+/* CONSTANTES */
+
 
 // CATEGORY NAME
 export const bestsMoviesCategoryName = 'bestsMovies';
@@ -28,6 +29,3 @@ export const bestMoviesURL = ocMoviesURL + bestMoviesFilter;
 export const bestMoviesFantasyURL = bestMoviesURL + categoryFilter + fantasyCategoryName;
 export const bestMoviesDocumentaryURL = bestMoviesURL + categoryFilter + documentaryCategoryName;
 export const bestMoviesThrillerURL = bestMoviesURL + categoryFilter + thrillerCategoryName;
-
-/* MODAL */
-export const heroModalOpen = document.querySelector('#hero_modal_open');

@@ -1,5 +1,3 @@
-import { heroModalOpen } from './consts.js';
-
 /**
  * Création de la movieModal du film reçu en paramètre depuis la movieCard
  * @param { Object } movieInfos
@@ -111,13 +109,15 @@ export function createMovieCard(movieInfos, movieDomId, movieTitle) {
     }
 }
 
+
 /* MODALE */
 
 /**
  * Hero
- * Ouvre la modale au click sur le bouton "More info".
+ * Ouvre la modale au click sur le bouton "More info" (Rend visible la modale qui suit le bouton cible de l'événement).
  * Ferme la modale au click sur la croix.
  */
+const heroModalOpen = document.querySelector('#hero_modal_open');
 heroModalOpen.addEventListener('click', function(event) {
     const movieModal = document.querySelector('.movie_modal');
     movieModal.hidden = false;
