@@ -12,13 +12,14 @@
     overflow: hidden;
 
     .carousel-items {
-      padding: 1rem 2rem;
+      padding: 1rem 2rem 1rem 1rem;
       display: flex;
       justify-content: flex-start;
 
       .carousel-item {
         display: flex;
         overflow: hidden;
+        padding: 1rem;
       }
     }
   }
