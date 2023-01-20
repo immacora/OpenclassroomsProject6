@@ -1,4 +1,4 @@
-import { getMovieInfos } from './requests.js';
+import { bestMovieId, getMovieInfos } from './requests.js';
 import { createMovieCard } from './movie_card_and_modal.js';
 
 /**
@@ -27,3 +27,23 @@ export async function createHero(bestMovieId) {
         alert("Erreur d'affichage du meilleur film toutes catégories confondue" + error);
     }
 }
+
+createHero(bestMovieId);
+
+/* MODALE */
+
+/**
+ * Hero
+ * Ouvre la modale au click sur le bouton "More info" (Rend visible la modale qui suit le bouton cible de l'événement).
+ * Ferme la modale au click sur la croix.
+ */
+const heroModalOpen = document.querySelector('#hero_modal_open');
+heroModalOpen.addEventListener('click', function(event) {
+    const movieModal = document.querySelector('.movie_modal');
+    movieModal.hidden = false;
+    event.stopPropagation();
+    const movieModalClose = document.querySelector('.movie_modal__close');
+    movieModalClose.addEventListener('click', function(event) {
+        movieModal.hidden = true;
+    })
+})

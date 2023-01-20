@@ -56,7 +56,7 @@ async function createCarousel(moviesIds, movieCategory) {
 
 // Listes des ids des éléments de chacun des 4 carousels.
 
-export const bestsMoviesCategoryCarousel = createCarousel(bestMoviesIds, bestsMoviesCategory);
-export const fantasyCategoryCarousel = createCarousel(bestMoviesFantasyIds, fantasyCategory);
-export const documentaryCategoryCarousel = createCarousel(bestMoviesDocumentaryIds, documentaryCategory);
-export const thrillerCategoryCarousel = createCarousel(bestMoviesThrillerIds, thrillerCategory);
+export const bestsMoviesCategoryCarousel = await createCarousel(bestMoviesIds, bestsMoviesCategory);
+export const fantasyCategoryCarousel = await createCarousel(bestMoviesFantasyIds, fantasyCategory);
+export const documentaryCategoryCarousel = await createCarousel(bestMoviesDocumentaryIds, documentaryCategory);
+export const thrillerCategoryCarousel = await createCarousel(bestMoviesThrillerIds, thrillerCategory);
