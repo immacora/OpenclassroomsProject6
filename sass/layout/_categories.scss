@@ -1,0 +1,17 @@
+/* CATEGORIES */
+
+#categories {
+  position: relative;
+  top: 20vh;
+  padding: 2rem;
+
+  .category {
+    padding: 1rem;
+  }
+
+  .category h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2rem;
+  }
+}

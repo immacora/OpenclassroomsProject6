@@ -1,4 +1,4 @@
-/* MIXINS */
+// MIXINS
 
 @mixin hero-shadow {
   text-shadow: $black 0.2rem 0.2rem 0.2rem;
@@ -9,6 +9,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: .6rem 1rem;
   font-weight: 600;
 }

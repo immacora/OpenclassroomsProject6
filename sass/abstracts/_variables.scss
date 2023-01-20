@@ -1,14 +1,14 @@
-/* VARIABLES */
+// VARIABLES
 
 
-/* FONTS */
+// FONTS
 
 // Regular font family
 /// @type List
 $text-font-stack: 'Poppins', sans-serif !default;
 
 
-/* COLORS */
+// COLORS
 
 // Main brand color
 /// @type Color
@@ -39,8 +39,7 @@ $white: #fff !default;
 $black: #000 !default;
 
 
-/* BREAKPOINTS */
-
+// BREAKPOINTS
 // Breakpoints map, AFFICHAGE PAR DEFAUT (streaming) : Ordinateurs et écran de tout type (entre 992 px et 1199 px)
 /// @prop {String} keys
 /// @prop {Map} values
