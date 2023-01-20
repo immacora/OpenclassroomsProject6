@@ -55,6 +55,7 @@ export async function getMovieInfos(movieId) {
 // Listes des 10 premiers Ids des films les mieux notés de chaque catégorie : Toutes catégories confondues, Fantasy, Documentary et Thriller.
 
 export const bestMoviesIds = await getMoviesIds(bestMoviesURL);
+export const bestMovieId = await bestMoviesIds[0];
 export const bestMoviesFantasyIds = await getMoviesIds(bestMoviesFantasyURL);
 export const bestMoviesDocumentaryIds = await getMoviesIds(bestMoviesDocumentaryURL);
 export const bestMoviesThrillerIds = await getMoviesIds(bestMoviesThrillerURL);

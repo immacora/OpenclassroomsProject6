@@ -3,12 +3,12 @@ import { createMovieCard } from './movie_card_and_modal.js';
 
 /**
  * Création de l'affichage du Hero
- * @param { Object } bestMoviesIds
+ * @param { Number } bestMovieId
  */
-export async function createHero(bestMoviesIds) {
+export async function createHero(bestMovieId) {
     try {
         // Récupération des données du film
-        const movieId = bestMoviesIds[0];
+        const movieId = bestMovieId;
         const movieInfos = await getMovieInfos(movieId);
         const movieTitle = movieInfos.title;
         const movieLongDescription = movieInfos.long_description;
