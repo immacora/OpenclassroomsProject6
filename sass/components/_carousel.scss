@@ -6,20 +6,24 @@
 
   i {
     font-size: 3rem;
+    cursor: pointer;
   }
 
   .carousel {
-    overflow: hidden;
+    margin: 0 1rem;
+    padding: 1rem;
 
     .carousel-items {
-      padding: 1rem 2rem 1rem 1rem;
       display: flex;
+      gap: 24px;
       justify-content: flex-start;
+      max-width: 800px;
+      overflow: hidden;
 
-      .carousel-item {
-        display: flex;
-        overflow: hidden;
-        padding: 1rem;
+      .movie_card {
+        width: 182px;
+        height: 268px;
+        
       }
     }
   }

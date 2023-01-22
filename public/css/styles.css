@@ -138,14 +138,25 @@ header .header__slogan {
 #categories {
   position: relative;
   top: 20vh;
-  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 10rem;
 }
 #categories .category {
-  padding: 1rem;
+  padding-bottom: 5rem;
 }
 #categories h2 {
   text-transform: uppercase;
   text-align: center;
+  padding-bottom: 3rem;
   font-size: 2rem;
 }
 
@@ -293,23 +304,24 @@ button i {
 }
 .carousel__wrapper i {
   font-size: 3rem;
+  cursor: pointer;
 }
 .carousel__wrapper .carousel {
-  overflow: hidden;
+  margin: 0 1rem;
+  padding: 1rem;
 }
 .carousel__wrapper .carousel .carousel-items {
-  padding: 1rem 2rem 1rem 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 24px;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-}
-.carousel__wrapper .carousel .carousel-items .carousel-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  max-width: 800px;
   overflow: hidden;
-  padding: 1rem;
+}
+.carousel__wrapper .carousel .carousel-items .movie_card {
+  width: 182px;
+  height: 268px;
 }

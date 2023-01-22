@@ -3,15 +3,19 @@
 #categories {
   position: relative;
   top: 20vh;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10rem;
 
   .category {
-    padding: 1rem;
+    padding-bottom: 5rem;
   }
 
   h2 {
     text-transform: uppercase;
     text-align: center;
+    padding-bottom: 3rem;
     font-size: 2rem;
   }
 }

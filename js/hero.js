@@ -5,7 +5,7 @@ import { createMovieCard } from './movie_card_and_modal.js';
  * Création de l'affichage du Hero
  * @param { Number } bestMovieId
  */
-export async function createHero(bestMovieId) {
+async function createHero(bestMovieId) {
     try {
         // Récupération des données du film
         const movieId = bestMovieId;
@@ -28,12 +28,9 @@ export async function createHero(bestMovieId) {
     }
 }
 
-createHero(bestMovieId);
-
-/* MODALE */
 
 /**
- * Hero
+ * Gestion des événements liés à la modale du hero
  * Ouvre la modale au click sur le bouton "More info" (Rend visible la modale qui suit le bouton cible de l'événement).
  * Ferme la modale au click sur la croix.
  */
@@ -47,3 +44,7 @@ heroModalOpen.addEventListener('click', function(event) {
         movieModal.hidden = true;
     })
 })
+
+
+//Crée le hero (movieCard et modale)
+export const hero = createHero(bestMovieId);
