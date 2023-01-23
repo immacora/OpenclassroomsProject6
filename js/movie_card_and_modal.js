@@ -32,7 +32,7 @@ function createMovieModal(movieInfos, movieImg, movieTitle, movieDomId) {
         const movieModalCard = 
         `<div class="movie_modal" hidden="true" role="dialog">
             <div class="movie_modal__header">
-                <h2 class="movie_modal__title">${movieTitle}</h2>
+                <h3 class="movie_modal__title">${movieTitle}</h3>
                 <div class="movie_modal__close"><i class="fa-solid fa-xmark"></i></div>
             </div>
             <div class="movie_modal__summary">

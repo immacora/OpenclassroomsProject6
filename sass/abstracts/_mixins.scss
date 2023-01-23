@@ -5,10 +5,13 @@
 }
 
 @mixin modal-header-footer {
-  background-color: $modal;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: .6rem 1rem;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+  padding: 0rem 1rem;
+  background-color: $modal;
   font-weight: 600;
+  font-size: 1.3rem;
 }

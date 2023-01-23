@@ -10,20 +10,27 @@
   }
 
   .carousel {
-    margin: 0 1rem;
     padding: 1rem;
 
     .carousel-items {
       display: flex;
-      gap: 24px;
+      gap: 20px;
       justify-content: flex-start;
-      max-width: 800px;
+      max-width: 788px;
       overflow: hidden;
 
       .movie_card {
         width: 182px;
         height: 268px;
-        
+      }
+      .movie_modal {
+        &__header {
+          font-size: 1.3rem;
+
+          i {
+            font-size: 1.9rem;
+          }
+        }
       }
     }
   }
