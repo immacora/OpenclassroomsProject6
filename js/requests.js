@@ -1,6 +1,6 @@
-import { ocMoviesURL, bestMoviesURL, bestMoviesFantasyURL, bestMoviesDocumentaryURL, bestMoviesThrillerURL } from './consts.js';
+import { ocMoviesURL, bestsMoviesCategoryData, fantasyCategoryData, documentaryCategoryData, thrillerCategoryData } from './consts.js';
 
-// ---- REQUETES FETCH ----//
+/* REQUETES FETCH */
 
 /**
  * Requête fetch asynchone retournant la liste des premiers Ids des films (1 à 10 maximum) les mieux notés d'une catégorie par classement descendant.
@@ -52,10 +52,10 @@ export async function getMovieInfos(movieId) {
     }
 }
 
-// Listes des 10 premiers Ids des films les mieux notés de chaque catégorie : Toutes catégories confondues, Fantasy, Documentary et Thriller.
+// Crée les listes des 10 premiers Ids des films les mieux notés de chaque catégorie : Toutes catégories confondues, Fantasy, Documentary et Thriller.
 
-export const bestMoviesIds = await getMoviesIds(bestMoviesURL);
+export const bestMoviesIds = await getMoviesIds(bestsMoviesCategoryData.url);
 export const bestMovieId = await bestMoviesIds[0];
-export const bestMoviesFantasyIds = await getMoviesIds(bestMoviesFantasyURL);
-export const bestMoviesDocumentaryIds = await getMoviesIds(bestMoviesDocumentaryURL);
-export const bestMoviesThrillerIds = await getMoviesIds(bestMoviesThrillerURL);
+export const bestMoviesFantasyIds = await getMoviesIds(fantasyCategoryData.url);
+export const bestMoviesDocumentaryIds = await getMoviesIds(documentaryCategoryData.url);
+export const bestMoviesThrillerIds = await getMoviesIds(thrillerCategoryData.url);

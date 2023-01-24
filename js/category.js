@@ -1,11 +1,13 @@
-import { bestsMoviesCategory, fantasyCategory, documentaryCategory, thrillerCategory } from './consts.js';
+import { bestsMoviesCategoryData, fantasyCategoryData, documentaryCategoryData, thrillerCategoryData } from './consts.js';
 import { bestMoviesIds, bestMoviesFantasyIds, bestMoviesDocumentaryIds, bestMoviesThrillerIds, getMovieInfos } from './requests.js';
 import { createMovieCard } from './movie_card_and_modal.js';
 
+/* CATEGORIES */
 
 /**
  * Suppression des 1 à 3 derniers id de catégorie selon le nombre d'id.
  * @param { Object } moviesIds
+ * @return { Object } moviesIds
  */
 function removeOverageIds(moviesIds) {
 
@@ -25,16 +27,16 @@ function removeOverageIds(moviesIds) {
     return moviesIds;
 }
 
-
 /**
- * Création du carrousel pour la catégorie reçue en paramètre
+ * Création d'une catégorie
  * @param { Object } moviesIds
- * @param { Object } movieCategory
+ * @param { Object } movieCategoryData
+ * @return { Object } category
  */
-async function createCarousel(moviesIds, movieCategory) {
+async function createCategory(moviesIds, movieCategoryData) {
 
     // Supprime le 1er id de la catégorie bestsMovies
-    if (movieCategory.name === 'bestsMovies') {
+    if (movieCategoryData.name === 'bestsMovies') {
         moviesIds.shift();
     }
 
@@ -44,10 +46,10 @@ async function createCarousel(moviesIds, movieCategory) {
     }
 
     // Récupère l'élément du DOM "ul" de la catégorie qui accueillera les films
-    const carouselItems = document.querySelector(movieCategory.domElement + " .carousel-items");
+    const carouselItems = document.querySelector(movieCategoryData.domElement + " .carousel-items");
 
-    // Crée le titre de la catégorie
-    document.querySelector(movieCategory.domElement + " h2").innerHTML = movieCategory.title;
+    // Ajoute le titre de la catégorie au DOM
+    document.querySelector(movieCategoryData.domElement + " h2").innerHTML = movieCategoryData.title;
 
     // Crée la liste des DOM ids des éléments "li" de la catégorie
     let categoryMovieDomIds = [];
@@ -64,26 +66,40 @@ async function createCarousel(moviesIds, movieCategory) {
             // Création de l'élément "li" du DOM recevant les données
             const movieElementLi = document.createElement("li");
             movieElementLi.setAttribute('class', 'carousel-item');
-            const categoryMovieDomId = movieNumber + '_' + movieCategory.name;
+            const categoryMovieDomId = movieNumber + '_' + movieCategoryData.name;
             movieElementLi.setAttribute('id', categoryMovieDomId);
 
-            // Rattachement de la balise "li" à la balise "ul" parente
+            // Rattache la balise "li" à la balise "ul" parente
             carouselItems.appendChild(movieElementLi);
 
-            //Récupération des id de liste des films (carousel-item)
+            //Ajoute les DOM id des films de la catégorie à la liste
             categoryMovieDomIds.push(categoryMovieDomId);
 
             createMovieCard(movieInfos, categoryMovieDomId, movieTitle);
         }
     } catch (error) {
-        alert("Erreur d'affichage du carousel" + error);
+        alert("Erreur de création de la catégorie" + error);
     }
-    return categoryMovieDomIds;
+    
+    // Crée l'ojet category et le retourne
+    const category = {
+        name: movieCategoryData.name,
+        domElement: movieCategoryData.domElement,
+        movieDomIds: categoryMovieDomIds
+    };
+    return category;
 }
 
+// Crée les catégories
+const bestsMoviesCategory = await createCategory(bestMoviesIds, bestsMoviesCategoryData);
+const fantasyCategory = await createCategory(bestMoviesFantasyIds, fantasyCategoryData);
+const documentaryCategory = await createCategory(bestMoviesDocumentaryIds, documentaryCategoryData);
+const thrillerCategory = await createCategory(bestMoviesThrillerIds, thrillerCategoryData);
 
-//Crée les 4 carousels (movieCard et modale) et exporte les listes des DOM ids de leurs éléments.
-export const bestsMoviesCategoryCarousel = await createCarousel(bestMoviesIds, bestsMoviesCategory);
-export const fantasyCategoryCarousel = await createCarousel(bestMoviesFantasyIds, fantasyCategory);
-export const documentaryCategoryCarousel = await createCarousel(bestMoviesDocumentaryIds, documentaryCategory);
-export const thrillerCategoryCarousel = await createCarousel(bestMoviesThrillerIds, thrillerCategory);
+// Exporte la liste des categories
+export const categories = [
+    bestsMoviesCategory,
+    fantasyCategory,
+    documentaryCategory,
+    thrillerCategory
+];

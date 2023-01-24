@@ -28,23 +28,5 @@ async function createHero(bestMovieId) {
     }
 }
 
-
-/**
- * Gestion des événements liés à la modale du hero
- * Ouvre la modale au click sur le bouton "More info" (Rend visible la modale qui suit le bouton cible de l'événement).
- * Ferme la modale au click sur la croix.
- */
-const heroModalOpen = document.querySelector('#hero_modal_open');
-heroModalOpen.addEventListener('click', function(event) {
-    const movieModal = document.querySelector('.movie_modal');
-    movieModal.hidden = false;
-    event.stopPropagation();
-    const movieModalClose = document.querySelector('.movie_modal__close');
-    movieModalClose.addEventListener('click', function(event) {
-        movieModal.hidden = true;
-    })
-})
-
-
-//Crée le hero (movieCard et modale)
+//Crée le hero
 export const hero = createHero(bestMovieId);

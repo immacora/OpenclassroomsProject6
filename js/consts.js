@@ -1,34 +1,42 @@
 /* CONSTANTES */
 
-// CATEGORIES
-export const bestsMoviesCategory = {
-    name: 'bestsMovies',
-    title: 'Films les mieux notés',
-    domElement: '#bestMovies '
-}
-export const fantasyCategory = {
-    name: 'fantasy',
-    title: 'Fantastiques',
-    domElement: '#categorie_1 ',
-}
-export const documentaryCategory = {
-    name: 'documentary',
-    title: 'Documentaires',
-    domElement: '#categorie_2 ',
-}
-export const thrillerCategory = {
-    name: 'thriller',
-    title: 'Thrillers',
-    domElement: '#categorie_3 ',
-}
-
 // API FILTERS
 const bestMoviesFilter = '?sort_by=-imdb_score';
 const categoryFilter = '&genre=';
 
+const fantasyURI = 'fantasy';
+const documentaryURI = 'documentary';
+const thrillerURI = 'thriller';
+
 // URL
 export const ocMoviesURL = 'http://localhost:8000/api/v1/titles/';
-export const bestMoviesURL = ocMoviesURL + bestMoviesFilter;
-export const bestMoviesFantasyURL = bestMoviesURL + categoryFilter + fantasyCategory.name;
-export const bestMoviesDocumentaryURL = bestMoviesURL + categoryFilter + documentaryCategory.name;
-export const bestMoviesThrillerURL = bestMoviesURL + categoryFilter + thrillerCategory.name;
+const bestMoviesURL = ocMoviesURL + bestMoviesFilter;
+const bestMoviesFantasyURL = bestMoviesURL + categoryFilter + fantasyURI;
+const bestMoviesDocumentaryURL = bestMoviesURL + categoryFilter + documentaryURI;
+const bestMoviesThrillerURL = bestMoviesURL + categoryFilter + thrillerURI;
+
+// CATEGORIES DATA
+export const bestsMoviesCategoryData = {
+    name: 'bestsMovies',
+    title: 'Films les mieux notés',
+    url: bestMoviesURL,
+    domElement: '#bestMovies '
+}
+export const fantasyCategoryData = {
+    name: 'fantasy',
+    title: 'Fantastiques',
+    url: bestMoviesFantasyURL,
+    domElement: '#categorie_1 '
+}
+export const documentaryCategoryData = {
+    name: 'documentary',
+    title: 'Documentaires',
+    url: bestMoviesDocumentaryURL,
+    domElement: '#categorie_2 '
+}
+export const thrillerCategoryData = {
+    name: 'thriller',
+    title: 'Thrillers',
+    url: bestMoviesThrillerURL,
+    domElement: '#categorie_3 '
+}

@@ -1,3 +1,5 @@
+/* IMAGE DU FILM ET MODALE */
+
 /**
  * Création de la movieModal du film reçu en paramètre depuis la movieCard
  * @param { Object } movieInfos
