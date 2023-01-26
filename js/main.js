@@ -1,5 +1,6 @@
 import { hero } from './hero.js';
 import { categories } from './category.js';
+import { carousels, moveCarousel } from './carousel.js';
 
 
 /**
@@ -41,18 +42,18 @@ for (let i = 0; i < moviesCard.length; i++) {
     })
 }
 
+
+// Initialise la liste de toutes les flèches de navigation des carousels du DOM
+const carouselArrows = document.querySelectorAll('.carousel__wrapper__arrow_nav_left, .carousel__wrapper__arrow_nav_right');
+
 /**
- * Crée les carousels liés aux catégories.
+ * Ecoute le click sur un élément carouselArrows.
+ * Récupère l'état des éléments "li" du DOM à l'instant du click.
+ * Appelle la fonction moveCarousel.
  */
-for (const category of categories) {
-
-    const carouselArrowNavLeft = document.querySelector(category.domElement + '.carousel__wrapper__arrow_nav_left');
-    const carouselArrowNavRight = document.querySelector(category.domElement + '.carousel__wrapper__arrow_nav_right');
-
-
-    console.log(category);
-    console.log(carouselArrowNavLeft);
-    console.log(carouselArrowNavRight);
-
-
+for (const carouselArrow of carouselArrows) {
+    carouselArrow.addEventListener('click', function() {
+        let carouselDomState = document.querySelectorAll('.carousel-items li');
+        moveCarousel(carouselArrow, carouselDomState);
+    })
 }

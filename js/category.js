@@ -81,25 +81,22 @@ async function createCategory(moviesIds, movieCategoryData) {
         alert("Erreur de création de la catégorie" + error);
     }
     
-    // Crée l'ojet category et le retourne
+    // Crée l'ojet category (domElement movieDomIds) et le retourne
     const category = {
-        name: movieCategoryData.name,
         domElement: movieCategoryData.domElement,
         movieDomIds: categoryMovieDomIds
     };
     return category;
 }
 
-// Crée les catégories
+// Crée et exporte les catégories.
 const bestsMoviesCategory = await createCategory(bestMoviesIds, bestsMoviesCategoryData);
 const fantasyCategory = await createCategory(bestMoviesFantasyIds, fantasyCategoryData);
 const documentaryCategory = await createCategory(bestMoviesDocumentaryIds, documentaryCategoryData);
 const thrillerCategory = await createCategory(bestMoviesThrillerIds, thrillerCategoryData);
-
-// Exporte la liste des categories
 export const categories = [
     bestsMoviesCategory,
     fantasyCategory,
     documentaryCategory,
     thrillerCategory
-];
+]

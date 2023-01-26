@@ -20,23 +20,23 @@ export const bestsMoviesCategoryData = {
     name: 'bestsMovies',
     title: 'Films les mieux notés',
     url: bestMoviesURL,
-    domElement: '#bestMovies '
+    domElement: '#bestsMovies '
 }
 export const fantasyCategoryData = {
     name: 'fantasy',
     title: 'Fantastiques',
     url: bestMoviesFantasyURL,
-    domElement: '#categorie_1 '
+    domElement: '#fantasy '
 }
 export const documentaryCategoryData = {
     name: 'documentary',
     title: 'Documentaires',
     url: bestMoviesDocumentaryURL,
-    domElement: '#categorie_2 '
+    domElement: '#documentary '
 }
 export const thrillerCategoryData = {
     name: 'thriller',
     title: 'Thrillers',
     url: bestMoviesThrillerURL,
-    domElement: '#categorie_3 '
+    domElement: '#thriller '
 }
