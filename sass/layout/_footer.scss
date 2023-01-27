@@ -8,4 +8,8 @@ footer {
     padding: 1rem;
     background-color: $main-grey;
     text-align: center;
+
+    @include xl-desktop{
+      font-size: 1.5rem;
+    }
 }

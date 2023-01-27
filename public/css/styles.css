@@ -47,13 +47,24 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+@media only screen and (min-width: 1199.98px) {
+  header {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.3rem;
+  }
 }
 header .header__logo {
   padding: 0.2rem 0 0.2rem 0;
   height: 8rem;
+}
+@media only screen and (min-width: 1199.98px) {
+  header .header__logo {
+    height: 10rem;
+  }
 }
 header .header__slogan {
   padding: 0 1rem 0 1rem;
@@ -114,6 +125,12 @@ header .header__slogan {
   font-size: 3.5rem;
   text-shadow: #000 0.2rem 0.2rem 0.2rem;
 }
+@media only screen and (min-width: 1199.98px) {
+  #hero .movie_summary__title {
+    text-transform: uppercase;
+    font-size: 4rem;
+  }
+}
 #hero .movie_summary .movie_buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -125,6 +142,11 @@ header .header__slogan {
 }
 #hero .movie_summary__long_description {
   text-shadow: #000 0.2rem 0.2rem 0.2rem;
+}
+@media only screen and (min-width: 1199.98px) {
+  #hero .movie_summary__long_description {
+    font-size: 1.5rem;
+  }
 }
 #hero .movie_card {
   overflow: hidden;
@@ -159,6 +181,11 @@ header .header__slogan {
   padding-bottom: 3rem;
   font-size: 2rem;
 }
+@media only screen and (min-width: 1199.98px) {
+  #categories h2 {
+    font-size: 2.5rem;
+  }
+}
 
 /* FOOTER */
 footer {
@@ -169,6 +196,11 @@ footer {
   padding: 1rem;
   background-color: #3E4E5C;
   text-align: center;
+}
+@media only screen and (min-width: 1199.98px) {
+  footer {
+    font-size: 1.5rem;
+  }
 }
 
 /* BUTTON */
@@ -249,7 +281,7 @@ button i {
   position: sticky;
   top: 0;
 }
-.movie_modal__close {
+.movie_modal__header .movie_modal__close {
   font-size: 1.9rem;
 }
 .movie_modal__summary {
@@ -297,6 +329,9 @@ button i {
   font-weight: 600;
   font-size: 1.2rem;
 }
+.movie_modal__time_infos .movie_modal__close {
+  font-size: 1.9rem;
+}
 
 /* CAROUSEL */
 .carousel__wrapper {
@@ -307,12 +342,17 @@ button i {
       -ms-flex-align: center;
           align-items: center;
 }
-.carousel__wrapper i {
+.carousel__wrapper .fa-angle-right, .carousel__wrapper .fa-angle-left {
   font-size: 3rem;
   cursor: pointer;
 }
 .carousel__wrapper .carousel {
   padding: 1rem;
+}
+@media only screen and (min-width: 1199.98px) {
+  .carousel__wrapper .carousel {
+    padding: 2rem;
+  }
 }
 .carousel__wrapper .carousel .carousel-items {
   display: -webkit-box;
@@ -325,13 +365,13 @@ button i {
   max-width: 788px;
   overflow: hidden;
 }
+@media only screen and (min-width: 1199.98px) {
+  .carousel__wrapper .carousel .carousel-items {
+    gap: 40px;
+    max-width: 848px;
+  }
+}
 .carousel__wrapper .carousel .carousel-items .movie_card {
   width: 182px;
   height: 268px;
-}
-.carousel__wrapper .carousel .carousel-items .movie_modal__header {
-  font-size: 1.3rem;
-}
-.carousel__wrapper .carousel .carousel-items .movie_modal__header i {
-  font-size: 1.9rem;
 }

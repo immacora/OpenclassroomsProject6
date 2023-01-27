@@ -19,6 +19,11 @@
       font-weight: 600;
       font-size: 3.5rem;
       @include hero-shadow;
+
+      @include xl-desktop{
+        text-transform: uppercase;
+        font-size: 4rem;
+      }
     }
     .movie_buttons {
       display: flex;
@@ -27,6 +32,10 @@
     }
     &__long_description {
       @include hero-shadow;
+
+      @include xl-desktop{
+        font-size: 1.5rem;
+      }
     }
   }
 

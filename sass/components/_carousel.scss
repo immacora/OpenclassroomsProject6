@@ -4,13 +4,17 @@
   display: flex;
   align-items: center;
 
-  i {
+  .fa-angle-right, .fa-angle-left {
     font-size: 3rem;
     cursor: pointer;
   }
 
   .carousel {
     padding: 1rem;
+
+    @include xl-desktop{
+      padding: 2rem;
+    }
 
     .carousel-items {
       display: flex;
@@ -19,18 +23,14 @@
       max-width: 788px;
       overflow: hidden;
 
+      @include xl-desktop{
+        gap: 40px;
+        max-width: 848px;
+      }
+
       .movie_card {
         width: 182px;
         height: 268px;
-      }
-      .movie_modal {
-        &__header {
-          font-size: 1.3rem;
-
-          i {
-            font-size: 1.9rem;
-          }
-        }
       }
     }
   }

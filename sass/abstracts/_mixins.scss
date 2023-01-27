@@ -1,9 +1,11 @@
 // MIXINS
 
+// HERO
 @mixin hero-shadow {
   text-shadow: $black 0.2rem 0.2rem 0.2rem;
 }
 
+// MODAL
 @mixin modal-header-footer {
   display: flex;
   justify-content: space-between;
@@ -14,4 +16,38 @@
   background-color: $modal;
   font-weight: 600;
   font-size: 1.2rem;
+
+  .movie_modal__close {
+    font-size: 1.9rem;
+  }
+}
+
+// MEDIA QUERIES (streaming : desktops-first, large devices)
+
+// X-Small devices (phones less than 576px)
+@mixin mobile-only {
+  @media only screen and (max-width: map-get($breakpoints, mobile)){
+    @content;
+  }
+}
+
+// Small devices (tablets and large phones, 576px min/768px max)
+@mixin tablet {
+  @media only screen and (min-width: map-get($breakpoints, mobile)) and (max-width: map-get($breakpoints, tablet)){
+    @content;
+  }
+}
+
+// Medium devices (landscape tablets and laptops, 769px min/ 992px max)
+@mixin laptops {
+  @media only screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, laptop)){
+    @content;
+  }
+}
+
+// Extra large devices (desktops/TV, 1200px and more)
+@mixin xl-desktop {
+  @media only screen and (min-width: map-get($breakpoints, xl-desktop)){
+    @content;
+  }
 }
