@@ -22,5 +22,5 @@ Le site fonctionne de façon similaire sur les navigateurs Google Chrome, Safari
     - Un fichier index.html
 
 ## Utilisation
-    - Démarrer le serveur depuis le répertoire OCMovies-API-EN-FR  : pipenv run python manage.py runserver
+    - Démarrer le serveur depuis le répertoire OCMovies-API-EN-FR  : cd OCMovies-API-EN-FR / pipenv run python manage.py runserver
     - Ouvrir le fichier HTML : start index.html
