@@ -38,5 +38,8 @@
       padding-bottom: 1rem;
       font-size: 1.5rem;
     }
+    @include mobile-only{
+      font-size: 1.2rem;
+    }
   }
 }

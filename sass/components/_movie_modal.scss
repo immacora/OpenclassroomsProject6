@@ -23,13 +23,25 @@
     width: 80vw;
     left: 10vw;
   }
+  @include mobile-only{
+    top: 10vh;
+    height: 80vh;
+  }
 
   &__header {
     @include modal-header-footer;
   }
   &__summary {
-    display: flex;
-    align-items: flex-start;
+    display: block;
+
+    img{
+      float: left;
+      padding-right: .5rem;
+
+      @include mobile-only{
+        width: 120px;
+      }
+    }
     
     &__long_description {
       padding: .5rem 1rem;

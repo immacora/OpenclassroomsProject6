@@ -5,12 +5,11 @@
   display: flex;
   text-transform: uppercase;
 
-  @include landscape-mobile{
-    display: none;
-  }
-
   @include laptop{
     text-transform: capitalize;
+  }
+  @include landscape-mobile{
+    display: none;
   }
   
   &__link {
@@ -32,6 +31,11 @@
   background-color: $main-grey;
   padding: 5rem 1rem;
   height: 100vh;
+
+  @include mobile-only{
+    padding: 5rem 0;
+    font-size: .9rem;
+  }
 }
 
 
@@ -41,6 +45,12 @@
     position: absolute;
     top: 1rem;
     right: 2rem;
+
+    @include mobile-only{
+      font-size: 1.5rem;
+      top: .5rem;
+      right: 1rem;
+    }
 }
 
 .menu__burger {

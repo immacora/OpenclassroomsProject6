@@ -25,6 +25,12 @@
   @include tablet{
     font-size: 1rem;
   }
+  @include mobile-only(){
+    height: 2.5rem;
+    padding: 0rem .5rem;
+    font-weight: 600;
+    font-size: .9rem;
+  }
 
   .movie_modal__close {
     font-size: 1.9rem;
@@ -34,6 +40,9 @@
     }
     @include tablet{
       font-size: 1.5rem;
+    }
+    @include mobile-only(){
+      font-size: 1.2rem;
     }
   }
 }

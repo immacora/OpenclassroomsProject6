@@ -24,7 +24,7 @@ function createMovieModal(movieInfos, movieImg, movieTitle, movieDomId) {
         // Formatage des données
         const movieImgString = movieImg.outerHTML;
         const movieDatePublishedString = movieDatePublished.toLocaleDateString();
-        const movieDurationString =  movieDuration + ' minutes';
+        const movieDurationString =  movieDuration + ' mn';
         const movieActorsString = movieActors.join(', ');
         const movieDirectorsString = movieDirectors.join(', ');
         const movieCountriesString = movieCountries.join(', ');

@@ -74,6 +74,11 @@ header .header__logo {
     height: 4.5rem;
   }
 }
+@media only screen and (max-width: 767.98px) {
+  header .header__logo {
+    height: 3rem;
+  }
+}
 header .header__slogan p {
   display: inline;
 }
@@ -95,14 +100,14 @@ header .header__slogan p {
   display: flex;
   text-transform: uppercase;
 }
-@media only screen and (max-width: 991.98px) {
-  .header__nav__menu {
-    display: none;
-  }
-}
 @media only screen and (max-width: 1919.98px) {
   .header__nav__menu {
     text-transform: capitalize;
+  }
+}
+@media only screen and (max-width: 991.98px) {
+  .header__nav__menu {
+    display: none;
   }
 }
 .header__nav__menu__link {
@@ -130,11 +135,25 @@ header .header__slogan p {
   padding: 5rem 1rem;
   height: 100vh;
 }
+@media only screen and (max-width: 767.98px) {
+  .header__nav__menu.open {
+    padding: 5rem 0;
+    font-size: 0.9rem;
+  }
+}
+
 .menu__burger, .menu__burger__close {
   font-size: 2rem;
   position: absolute;
   top: 1rem;
   right: 2rem;
+}
+@media only screen and (max-width: 767.98px) {
+  .menu__burger, .menu__burger__close {
+    font-size: 1.5rem;
+    top: 0.5rem;
+    right: 1rem;
+  }
 }
 
 .menu__burger {
@@ -174,6 +193,12 @@ header .header__slogan p {
       -ms-flex-pack: center;
           justify-content: center;
 }
+@media only screen and (max-width: 767.98px) {
+  #hero .movie_summary {
+    left: 1rem;
+    width: 80%;
+  }
+}
 #hero .movie_summary__title {
   font-weight: 600;
   font-size: 5rem;
@@ -192,6 +217,11 @@ header .header__slogan p {
 @media only screen and (max-width: 991.98px) {
   #hero .movie_summary__title {
     font-size: 2.5rem;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  #hero .movie_summary__title {
+    font-size: 1.5rem;
   }
 }
 #hero .movie_summary .movie_buttons {
@@ -218,6 +248,11 @@ header .header__slogan p {
   #hero .movie_summary__long_description {
     padding: 0 0;
     font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  #hero .movie_summary__long_description {
+    font-size: 0.7rem;
   }
 }
 #hero .movie_card {
@@ -282,6 +317,11 @@ header .header__slogan p {
     text-transform: none;
     padding-bottom: 1rem;
     font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  #categories h2 {
+    font-size: 1.2rem;
   }
 }
 
@@ -423,6 +463,12 @@ button i {
     left: 10vw;
   }
 }
+@media only screen and (max-width: 767.98px) {
+  .movie_modal {
+    top: 10vh;
+    height: 80vh;
+  }
+}
 .movie_modal__header {
   position: sticky;
   top: 0;
@@ -452,6 +498,14 @@ button i {
     font-size: 1rem;
   }
 }
+@media only screen and (max-width: 767.98px) {
+  .movie_modal__header {
+    height: 2.5rem;
+    padding: 0rem 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+}
 .movie_modal__header .movie_modal__close {
   font-size: 1.9rem;
 }
@@ -465,13 +519,22 @@ button i {
     font-size: 1.5rem;
   }
 }
+@media only screen and (max-width: 767.98px) {
+  .movie_modal__header .movie_modal__close {
+    font-size: 1.2rem;
+  }
+}
 .movie_modal__summary {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  display: block;
+}
+.movie_modal__summary img {
+  float: left;
+  padding-right: 0.5rem;
+}
+@media only screen and (max-width: 767.98px) {
+  .movie_modal__summary img {
+    width: 120px;
+  }
 }
 .movie_modal__summary__long_description {
   padding: 0.5rem 1rem;
@@ -517,6 +580,14 @@ button i {
     font-size: 1rem;
   }
 }
+@media only screen and (max-width: 767.98px) {
+  .movie_modal__time_infos {
+    height: 2.5rem;
+    padding: 0rem 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+}
 .movie_modal__time_infos .movie_modal__close {
   font-size: 1.9rem;
 }
@@ -530,6 +601,11 @@ button i {
     font-size: 1.5rem;
   }
 }
+@media only screen and (max-width: 767.98px) {
+  .movie_modal__time_infos .movie_modal__close {
+    font-size: 1.2rem;
+  }
+}
 
 /* CAROUSEL */
 .carousel__wrapper {
@@ -539,6 +615,9 @@ button i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .carousel__wrapper .fa-angle-right, .carousel__wrapper .fa-angle-left {
   font-size: 4rem;
@@ -557,6 +636,11 @@ button i {
 @media only screen and (max-width: 991.98px) {
   .carousel__wrapper .fa-angle-right, .carousel__wrapper .fa-angle-left {
     font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .carousel__wrapper .fa-angle-right, .carousel__wrapper .fa-angle-left {
+    display: none;
   }
 }
 .carousel__wrapper .carousel {
@@ -593,6 +677,14 @@ button i {
   .carousel__wrapper .carousel .carousel-items {
     gap: 10px;
     max-width: 758px;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .carousel__wrapper .carousel .carousel-items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 .carousel__wrapper .carousel .carousel-items .movie_card {

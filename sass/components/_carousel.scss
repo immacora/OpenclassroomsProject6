@@ -3,6 +3,7 @@
 .carousel__wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
 
   .fa-angle-right, .fa-angle-left {
     font-size: 4rem;
@@ -16,6 +17,9 @@
     }
     @include landscape-mobile{
       font-size: 2rem;
+    }
+    @include mobile-only{
+      display: none;
     }
   }
 
@@ -43,6 +47,9 @@
       @include tablet{
         gap: 10px;
         max-width: 758px;
+      }
+      @include mobile-only{
+        flex-direction: column;
       }
 
       .movie_card {

@@ -15,6 +15,11 @@
     flex-direction: column;
     justify-content: center;
 
+    @include mobile-only{
+      left: 1rem;
+      width: 80%;
+    }
+
     &__title {
       font-weight: 600;
       font-size: 5rem;
@@ -28,6 +33,9 @@
       }
       @include landscape-mobile{
         font-size: 2.5rem;
+      }
+      @include mobile-only{
+        font-size: 1.5rem;
       }
     }
     .movie_buttons {
@@ -47,6 +55,9 @@
       @include landscape-mobile{
         padding: 0 0;
         font-size: .9rem;
+      }
+      @include mobile-only{
+        font-size: .7rem;
       }
     }
   }

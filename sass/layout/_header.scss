@@ -31,6 +31,9 @@ header {
       top: .3rem;
       height: 4.5rem;
     }
+    @include mobile-only{
+      height: 3rem;
+    }
   }
   .header__slogan {
 
