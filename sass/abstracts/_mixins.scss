@@ -7,47 +7,63 @@
 
 // MODAL
 @mixin modal-header-footer {
+  position: sticky;
+  top: 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   height: 4rem;
   width: 100%;
   padding: 0rem 1rem;
   background-color: $modal;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+
+  @include laptop{
+    font-size: 1.1rem;
+  }
+  @include tablet{
+    font-size: 1rem;
+  }
 
   .movie_modal__close {
     font-size: 1.9rem;
+
+    @include laptop{
+      font-size: 1.7rem;
+    }
+    @include tablet{
+      font-size: 1.5rem;
+    }
   }
 }
 
-// MEDIA QUERIES (streaming : desktops-first, large devices)
+// MEDIA QUERIES (streaming : large devices-first, Desktops and TV 1920px and more)
 
-// X-Small devices (phones less than 576px)
+// Breakpoint 1 :  Desktops and Laptops (1280-1920px)
+@mixin laptop {
+  @media only screen and (max-width: map-get($breakpoints, desktop)){
+    @content;
+  }
+}
+
+// Breakpoint 2 : Tablets landscape (992-1280px)
+@mixin tablet {
+  @media only screen and (max-width: map-get($breakpoints, laptop)){
+    @content;
+  }
+}
+
+// Breakpoint 3 : Tablets portait and Mobiles landscape (768-992px)
+@mixin landscape-mobile {
+  @media only screen and (max-width: map-get($breakpoints, tablet)){
+    @content;
+  }
+}
+
+// Breakpoint 4 : Mobile (768px max)
 @mixin mobile-only {
   @media only screen and (max-width: map-get($breakpoints, mobile)){
-    @content;
-  }
-}
-
-// Small devices (tablets and large phones, 576px min/768px max)
-@mixin tablet {
-  @media only screen and (min-width: map-get($breakpoints, mobile)) and (max-width: map-get($breakpoints, tablet)){
-    @content;
-  }
-}
-
-// Medium devices (landscape tablets and laptops, 769px min/ 992px max)
-@mixin laptops {
-  @media only screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, laptop)){
-    @content;
-  }
-}
-
-// Extra large devices (desktops/TV, 1200px and more)
-@mixin xl-desktop {
-  @media only screen and (min-width: map-get($breakpoints, xl-desktop)){
     @content;
   }
 }

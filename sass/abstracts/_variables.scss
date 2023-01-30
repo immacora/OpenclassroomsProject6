@@ -44,8 +44,8 @@ $black: #000 !default;
 /// @prop {String} keys
 /// @prop {Map} values
 $breakpoints: (
-  'mobile': 575.98px,
-  'tablet': 767.98px,
-  'laptop': 991.98px,
-  'xl-desktop': 1199.98px
+  'mobile': 767.98px,
+  'tablet': 991.98px,
+  'laptop': 1279.98px,
+  'desktop': 1919.98px
 ) !default;

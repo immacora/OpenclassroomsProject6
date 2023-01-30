@@ -3,15 +3,31 @@
 button {
   display: flex;
   align-items: center;
-  margin-right: 1.5rem;
-  padding:.6rem 1.2rem;
   border-radius: 5rem;
   border: none;
-  font-family: $text-font-stack;
-  font-size: 1.1rem;
-  color: $white;
   background-color: $main-grey;
+  font-family: $text-font-stack;
+  color: $white;
   cursor: pointer;
+  margin-right: 1.5rem;
+  padding:.6rem 1.2rem;
+  font-size: 1.1rem;
+
+  @include laptop{
+    margin-right: 1.5rem;
+    padding:.5rem 1.1rem;
+    font-size: 1rem;
+  }
+  @include landscape-mobile{
+    margin-right: 1rem;
+    padding: .4rem .9rem;
+    font-size: .8rem;
+  }
+  @include mobile-only{
+    margin-right: .5rem;
+    padding: .3rem .5rem;
+    font-size: .5rem;
+  }
 
   &:hover {
     color: $hover;
@@ -19,5 +35,12 @@ button {
 
   i {
     margin-right: .7rem;
+
+    @include laptop{
+      margin-right: .5rem;
+    }
+    @include mobile-only{
+      margin-right: .3rem;
+    }
   }
 }

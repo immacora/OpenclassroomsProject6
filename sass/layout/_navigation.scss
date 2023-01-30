@@ -1,27 +1,57 @@
 /* NAVIGATION */
 
-// HEADER MENU
-.header__nav {
+// NAV MENU
+.header__nav__menu {
   display: flex;
-  align-items: center;
+  text-transform: uppercase;
 
-  .header__nav__menu {
-    display: flex;
+  @include landscape-mobile{
+    display: none;
+  }
 
-    .header__nav__menu__link {
-      padding: 0.5rem;
+  @include laptop{
+    text-transform: capitalize;
+  }
+  
+  &__link {
+    padding: 1rem;
       
-      & :hover {
-        color: $hover;
-      }
+    & :hover {
+      color: $hover;
     }
   }
 }
 
+.header__nav__menu.open {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $main-grey;
+  padding: 5rem 1rem;
+  height: 100vh;
+}
+
+
 // BURGER MENU
 .menu__burger, .menu__burger__close {
-    font-size: 2.5rem;
+    font-size: 2rem;
     position: absolute;
+    top: 1rem;
     right: 2rem;
-    display: none;
+}
+
+.menu__burger {
+  display: none;
+
+  @include landscape-mobile{
+    display: block;
+  }
+}
+
+.menu__burger__close {
+  display: none;
+  z-index: 1;
 }

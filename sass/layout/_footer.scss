@@ -1,15 +1,31 @@
 /* FOOTER */
 
 footer {
-    position: relative;
-    top: 20vh;
-    width: 100%;
-    height: 7vh;
-    padding: 1rem;
-    background-color: $main-grey;
-    text-align: center;
+  width: 100%;
+  height: 6vh;
+  background-color: $main-grey;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.3rem;
 
-    @include xl-desktop{
-      font-size: 1.5rem;
+  @include laptop{
+    font-size: 1.1rem;
+  }
+  @include tablet{
+    font-size: 1.1rem;
+  }
+  @include landscape-mobile{
+    background-color: initial;
+  }
+  @include mobile-only{
+    font-size: .9rem;
+  }
+
+  p {
+    padding-top: 1rem;
+
+    @include laptop{
+      padding-top: .8rem;
     }
+  }
 }

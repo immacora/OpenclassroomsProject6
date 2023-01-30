@@ -5,32 +5,54 @@
   align-items: center;
 
   .fa-angle-right, .fa-angle-left {
-    font-size: 3rem;
+    font-size: 4rem;
     cursor: pointer;
+
+    @include laptop{
+      font-size: 3rem;
+    }
+    @include tablet{
+      font-size: 2.5rem;
+    }
+    @include landscape-mobile{
+      font-size: 2rem;
+    }
   }
 
   .carousel {
-    padding: 1rem;
+    padding: 0 2.5rem;
 
-    @include xl-desktop{
-      padding: 2rem;
+    @include laptop{
+      padding: 0 1.5rem;
+    }
+    @include tablet{
+      padding: 0 .7rem;
     }
 
     .carousel-items {
       display: flex;
-      gap: 20px;
+      gap: 40px;
       justify-content: flex-start;
-      max-width: 788px;
+      max-width: 848px;
       overflow: hidden;
 
-      @include xl-desktop{
-        gap: 40px;
-        max-width: 848px;
+      @include laptop{
+        gap: 20px;
+        max-width: 788px;
+      }
+      @include tablet{
+        gap: 10px;
+        max-width: 758px;
       }
 
       .movie_card {
         width: 182px;
         height: 268px;
+
+        @include landscape-mobile{
+          width: 130px;
+          height: 191px;
+        }
       }
     }
   }

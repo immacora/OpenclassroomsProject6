@@ -2,12 +2,12 @@
 
 #hero {
   position: relative;
-  top: 20vh;
-  height: 80vh;
+  top: 0;
+  height: 100vh;
 
   .movie_summary {
     position: absolute;
-    top: 3rem;
+    top: 12vh;
     left: 3rem;
     width: 50%;
     height: 80%;
@@ -17,24 +17,36 @@
 
     &__title {
       font-weight: 600;
-      font-size: 3.5rem;
+      font-size: 5rem;
       @include hero-shadow;
 
-      @include xl-desktop{
-        text-transform: uppercase;
+      @include laptop{
         font-size: 4rem;
+      }
+      @include tablet{
+        font-size: 3.5rem;
+      }
+      @include landscape-mobile{
+        font-size: 2.5rem;
       }
     }
     .movie_buttons {
       display: flex;
-      align-items: center;
       padding: 1rem 0 2rem 0;
     }
     &__long_description {
       @include hero-shadow;
+      font-size: 1.5rem;
 
-      @include xl-desktop{
-        font-size: 1.5rem;
+      @include laptop{
+        font-size: 1.2rem;
+      }
+      @include tablet{
+        font-size: 1rem;
+      }
+      @include landscape-mobile{
+        padding: 0 0;
+        font-size: .9rem;
       }
     }
   }

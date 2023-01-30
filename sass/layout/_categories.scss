@@ -2,24 +2,41 @@
 
 #categories {
   position: relative;
-  top: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 10rem;
 
-  .category {
-    padding-bottom: 5rem;
+  @include laptop{
+    padding-top: 8rem;
+  }
+  @include landscape-mobile{
+    padding-top: 3rem;
   }
 
+  .category {
+    padding-bottom: 5rem;
+
+    @include laptop{
+      padding-bottom: 3rem;
+    }
+    @include landscape-mobile{
+      padding-bottom: 2rem;
+    }
+  }
   h2 {
     text-transform: uppercase;
     text-align: center;
     padding-bottom: 3rem;
     font-size: 2rem;
 
-    @include xl-desktop{
-      font-size: 2.5rem;
+    @include laptop{
+      padding-bottom: 2rem;
+    }
+    @include landscape-mobile{
+      text-transform: none;
+      padding-bottom: 1rem;
+      font-size: 1.5rem;
     }
   }
 }

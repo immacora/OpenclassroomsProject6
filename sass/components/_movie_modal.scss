@@ -3,42 +3,48 @@
 .movie_modal {
   position: fixed;
   z-index: 1;
-  top: 25vh;
-  right: 5vw;
+  top: 20vh;
   height: 70vh;
-  width: 90vw;
+  width: 70vw;
+  left: 15vw;
+  border-radius: 15px;
   overflow: auto;
-  flex-direction: column;
   background-color: $modal-background;
   color: $modal-text;
-  border-radius: 15px;
+
+  @include laptop{
+    font-size: 1rem;
+  }
+  @include tablet{
+    font-size: .9rem;
+  }
+  @include landscape-mobile{
+    top: 15vh;
+    width: 80vw;
+    left: 10vw;
+  }
 
   &__header {
     @include modal-header-footer;
-    position: sticky;
-    top: 0;
   }
   &__summary {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     
     &__long_description {
-      padding: 1rem;
+      padding: .5rem 1rem;
       font-weight: 600;
     }
   }
   &__infos {
     > div {
       display: flex;
-      align-items: center;
-      border-bottom: #718EA8 1px solid;
+      border-top: #718EA8 1px solid;
+      padding: .5rem 1rem;
     }
     &__title {
         font-weight: 600;
-        padding-left: 1rem;
-    }
-    &__contents {
-        padding: .5rem;
+        padding-right: .5rem;
     }
   }
   &__time_infos {
