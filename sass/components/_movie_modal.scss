@@ -4,7 +4,7 @@
   position: fixed;
   z-index: 1;
   top: 20vh;
-  height: 70vh;
+  max-height: 80%;
   width: 70vw;
   left: 15vw;
   border-radius: 15px;
@@ -13,19 +13,16 @@
   color: $modal-text;
 
   @include laptop{
+    top: 15vh;
+    width: 80vw;
+    left: 10vw;
     font-size: 1rem;
   }
   @include tablet{
     font-size: .9rem;
   }
   @include landscape-mobile{
-    top: 15vh;
-    width: 80vw;
-    left: 10vw;
-  }
-  @include mobile-only{
-    top: 10vh;
-    height: 80vh;
+    font-size: .8rem;
   }
 
   &__header {
@@ -37,8 +34,9 @@
     img{
       float: left;
       padding-right: .5rem;
+      margin-bottom: .5rem;
 
-      @include mobile-only{
+      @include landscape-mobile{
         width: 120px;
       }
     }
@@ -46,17 +44,31 @@
     &__long_description {
       padding: .5rem 1rem;
       font-weight: 600;
+      
+      @include mobile-only{
+        padding: .3rem .5rem;
+      }
     }
   }
   &__infos {
     > div {
       display: flex;
+      float: none;
+      clear: both;
       border-top: #718EA8 1px solid;
       padding: .5rem 1rem;
+
+      @include mobile-only{
+        padding: .3rem .5rem;
+      }
     }
     &__title {
         font-weight: 600;
         padding-right: .5rem;
+
+        @include mobile-only{
+          padding-right: .3rem;
+        }
     }
   }
   &__time_infos {
