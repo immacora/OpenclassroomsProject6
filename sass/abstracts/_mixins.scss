@@ -12,23 +12,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 4rem;
+  height: auto;
   width: 100%;
-  padding: 0rem 1rem;
+  padding: 1rem 1rem;
   background-color: $modal;
   font-weight: 600;
   font-size: 1.3rem;
 
   @include laptop{
     font-size: 1.1rem;
-    height: 3.5rem;
   }
   @include tablet{
     font-size: 1rem;
   }
   @include landscape-mobile(){
-    height: 2.5rem;
-    padding: 0rem .5rem;
+    padding: .3rem .5rem;
     font-weight: 600;
     font-size: .9rem;
   }
