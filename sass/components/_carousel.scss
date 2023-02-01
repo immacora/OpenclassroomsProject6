@@ -49,7 +49,9 @@
         max-width: 758px;
       }
       @include mobile-only{
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 130px 130px;
+        
       }
 
       .movie_card {

@@ -438,7 +438,7 @@ button i {
   position: fixed;
   z-index: 1;
   top: 20vh;
-  height: 70vh;
+  max-height: 80%;
   width: 70vw;
   left: 15vw;
   border-radius: 15px;
@@ -448,6 +448,9 @@ button i {
 }
 @media only screen and (max-width: 1919.98px) {
   .movie_modal {
+    top: 15vh;
+    width: 80vw;
+    left: 10vw;
     font-size: 1rem;
   }
 }
@@ -458,15 +461,7 @@ button i {
 }
 @media only screen and (max-width: 991.98px) {
   .movie_modal {
-    top: 15vh;
-    width: 80vw;
-    left: 10vw;
-  }
-}
-@media only screen and (max-width: 767.98px) {
-  .movie_modal {
-    top: 10vh;
-    height: 80vh;
+    font-size: 0.8rem;
   }
 }
 .movie_modal__header {
@@ -481,9 +476,9 @@ button i {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 4rem;
+  height: auto;
   width: 100%;
-  padding: 0rem 1rem;
+  padding: 1rem 1rem;
   background-color: #718EA8;
   font-weight: 600;
   font-size: 1.3rem;
@@ -498,10 +493,9 @@ button i {
     font-size: 1rem;
   }
 }
-@media only screen and (max-width: 767.98px) {
+@media only screen and (max-width: 991.98px) {
   .movie_modal__header {
-    height: 2.5rem;
-    padding: 0rem 0.5rem;
+    padding: 0.3rem 0.5rem;
     font-weight: 600;
     font-size: 0.9rem;
   }
@@ -530,8 +524,9 @@ button i {
 .movie_modal__summary img {
   float: left;
   padding-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }
-@media only screen and (max-width: 767.98px) {
+@media only screen and (max-width: 991.98px) {
   .movie_modal__summary img {
     width: 120px;
   }
@@ -540,16 +535,33 @@ button i {
   padding: 0.5rem 1rem;
   font-weight: 600;
 }
+@media only screen and (max-width: 767.98px) {
+  .movie_modal__summary__long_description {
+    padding: 0.3rem 0.5rem;
+  }
+}
 .movie_modal__infos > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  float: none;
+  clear: both;
   border-top: #718EA8 1px solid;
   padding: 0.5rem 1rem;
+}
+@media only screen and (max-width: 767.98px) {
+  .movie_modal__infos > div {
+    padding: 0.3rem 0.5rem;
+  }
 }
 .movie_modal__infos__title {
   font-weight: 600;
   padding-right: 0.5rem;
+}
+@media only screen and (max-width: 767.98px) {
+  .movie_modal__infos__title {
+    padding-right: 0.3rem;
+  }
 }
 .movie_modal__time_infos {
   position: sticky;
@@ -563,9 +575,9 @@ button i {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 4rem;
+  height: auto;
   width: 100%;
-  padding: 0rem 1rem;
+  padding: 1rem 1rem;
   background-color: #718EA8;
   font-weight: 600;
   font-size: 1.3rem;
@@ -580,10 +592,9 @@ button i {
     font-size: 1rem;
   }
 }
-@media only screen and (max-width: 767.98px) {
+@media only screen and (max-width: 991.98px) {
   .movie_modal__time_infos {
-    height: 2.5rem;
-    padding: 0rem 0.5rem;
+    padding: 0.3rem 0.5rem;
     font-weight: 600;
     font-size: 0.9rem;
   }
@@ -681,10 +692,8 @@ button i {
 }
 @media only screen and (max-width: 767.98px) {
   .carousel__wrapper .carousel .carousel-items {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    display: grid;
+    grid-template-columns: 130px 130px;
   }
 }
 .carousel__wrapper .carousel .carousel-items .movie_card {

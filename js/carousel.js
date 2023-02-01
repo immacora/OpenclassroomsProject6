@@ -107,7 +107,7 @@ export function moveCarousel (carouselArrow, carouselDomState) {
 
 
 /**
- * Crée le carousel (DOM) lié à la catégorie donnée en paramètre si le nombre d'éléments de la catégorie est supérieur à 4.
+ * Si la taille du viewport utilisé est strictement supérieure à la taille du mobile-only breakpoint, et si le nombre d'éléments de la catégorie est supérieur à 4, crée le carousel (DOM) lié à la catégorie donnée en paramètre.
  * Lie les flèches de navigation de la catégorie au carousel.
  * Initialise l'état de départ de chaque item du carousel : ajout des attributs (visible : classe "active", ou caché : display = "none") à ses éléments "li".
  * Crée et retourne l'objet carousel (carouselDomElement et flèches de navigation) ou le booléen false.
@@ -118,9 +118,13 @@ export function moveCarousel (carouselArrow, carouselDomState) {
 function createCarousel(category) {
 
     const carouselMoviesNumber = category.movieDomIds.length;
+    const mobileViewport = 767.98;
+    let actualViewport = document.documentElement.clientWidth;
 
     try {
-        if (carouselMoviesNumber > 4) {
+        
+        if ((carouselMoviesNumber > 4) && (actualViewport > mobileViewport)) {
+            
             const carouselDomElement = category.domElement;
             const categoryItemsIds = category.movieDomIds;
             const arrowNavLeft = document.querySelector(carouselDomElement + '.carousel__wrapper__arrow_nav_left');
