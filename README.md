@@ -4,6 +4,8 @@ Développez une interface utilisateur pour une application web Python
 Site web utilisant l'API REST OCMovies-API pour permettre aux abonnés de l’association JustStreamIt de visualiser, en temps réel, les films les mieux notés.
 Le site fonctionne de façon similaire sur les navigateurs Google Chrome, Microsoft Edge, Firefox et Safari. Il est développé en HTML5, CSS3 et Vanilla JavaScript.
 
+![juststreamit](https://user-images.githubusercontent.com/76613773/218975673-68695e57-6fbe-4ea8-97db-c4f98353b653.png)
+
 ## Prérequis :
     - python 3.10.7
     - pip
